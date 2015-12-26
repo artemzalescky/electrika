@@ -3,10 +3,6 @@ ul#contact-info .icon {font-size:20px;float:left;line-height:25px;margin-right:1
 ul#contact-info .field {font-weight:bold;}
 ul#contact-info {list-style:none; padding-left: 0px}
 
-#divFooter .footer-column {
-    padding-left: 0;
-}
-
 /* Icons */
 [class*="social foundicon-"]:before {font-family: "SocialFoundicons";}
 [class*="general foundicon-"]:before {font-family: "GeneralFoundicons";}

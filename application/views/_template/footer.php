@@ -1,7 +1,7 @@
 <div id="divFooter" class="footerArea">
     <div class="container">
         <div class="row">
-            <div class="col-md-3 footer-column">
+            <div class="col-md-3">
                 <h3>Каталог</h3>
                 <p>
                     <a href="#">Розетки и выключатели</a><br />
@@ -12,7 +12,7 @@
                     <a href="#">Счётчики</a>
                 </p>
             </div>
-            <div class="col-md-3 footer-column">
+            <div class="col-md-3">
                 <h3>Последние новости</h3>
                 <p>
                     <?php $ph->link('Сенсация №1', '#') ?>
@@ -32,7 +32,7 @@
                     <?php $ph->link('Все новости', '#') ?>
                 </p>
             </div>
-            <div class="col-md-3 footer-column">
+            <div class="col-md-3">
                 <h3>График работы</h3>
                 Понедельник     Выходной <br/>
                 Вторник 08:00 — 18:00 <br/>
@@ -43,7 +43,7 @@
                 Воскресенье     08:00 — 15:00 <br/>
                 для того чтобы заказать товар на завтра звоните до 20-00 <br/>
             </div>
-            <div class="col-md-3 footer-column">
+            <div class="col-md-3">
                 <h3>Контакты</h3>
                 <ul id="contact-info">
                     <li>
@@ -73,9 +73,11 @@
         <br>
 
         <div class="row">
-            <p class="copyright">
-                Copyright © 2015 &nbsp; 220minsk.by. &nbsp; All Rights Reserved.
-            </p>
+            <div class="col-md-12">
+                <p class="copyright">
+                    Copyright © 2015 &nbsp; 220minsk.by. &nbsp; All Rights Reserved.
+                </p>
+            </div>
         </div>
     </div>
 </div>
