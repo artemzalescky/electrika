@@ -125,7 +125,7 @@
     </div>
 </section>
 
- 
+
 <section class="section section--medium padding-bottom-0">
     <div class="container">
         <ul class="logo-bar">
@@ -147,6 +147,20 @@
         </ul>
     </div>
 </section>
+
+<br>
+<h1 style="text-align: center">Расположение </h1>
+<div class="container">
+    <hr>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div style="width: 100%; height: 370px;outline: 0; border: 0;" id="map">
+            <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=L6EXPO3e_tQbK8PVSs3OrCReVhyaCTlN&lang=ru_RU&sourceType=constructor"></script>
+        </div>
+    </div>
+</div>
 
 
 <?php $this->renderTemplate('footer') ?>

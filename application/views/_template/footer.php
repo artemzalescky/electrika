@@ -1,4 +1,3 @@
-<br>
 <div id="divFooter" class="footerArea">
     <div class="container">
         <div class="divPanel">
