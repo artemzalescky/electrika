@@ -77,6 +77,11 @@ class CatalogModel {
         return !empty($catalog);
     }
 
+    public function catalogExistForUrl($url) {
+        $catalog = $this->getByUrl($url);
+        return !empty($catalog);
+    }
+
     public function create($catalog) {
         $validationErrors = $this->validateCatalog($catalog);
         if (!empty($validationErrors)) {

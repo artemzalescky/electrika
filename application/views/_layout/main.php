@@ -24,7 +24,9 @@
 <?php $this->renderTemplate('header') ?>
 
 <div class="container" style="margin-top: 100px">
+    <hr>
     <?php $this->renderContent() ?>
+    <hr>
 </div>
 
 <?php $this->renderTemplate('footer') ?>
