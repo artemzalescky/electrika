@@ -5,15 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php $ph->include_system_css('/themes/bootstrap.min.new.css')
+    <?php
+        $ph->include_system_css('/themes/bootstrap.min.css')
+        ->include_system_css('glyphicon.css')
         ->include_system_js_lib('jquery-2.1.4.min.js')
         ->include_system_js_lib('bootstrap-3.3.5-dist/bootstrap.min.js')
-        ->include_system_css('glyphicon.css')
+
         /*Header*/
-        ->include_css('header/font-awesome.css')
         ->include_css('header/bootstrap-theme.css')
+
         /*Footer*/
-        ->include_css('footer/bootstrap-responsive.min.css')
         ->include_css('footer/footer.css')
 
         /*Carousel*/
@@ -22,17 +23,10 @@
         /*index*/
         ->include_css('catalog.css')
         ->include_css('logo.css')
-
-
     ?>
-    <!-- footer -->
-    <!--    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
-
-
 </head>
 
 <body>
-
 
 <?php $this->renderTemplate('header') ?>
 
@@ -81,21 +75,17 @@
 </div><!-- /.carousel -->
 
 <div class="container marketing">
-
-    <!-- Three columns of text below the carousel -->
     <div class="row">
-
       <?php  foreach($catalogs as $catalog){ ?>
         <div class="col-lg-4">  <?php $ph->image('catalog/'.$catalog['id'].'.jpeg', ['class' => 'img-circle', 'data-src' => 'holder.js/140x140', 'style' => 'width: 140px; height: 140px;'])?>
             <h3 class="catalog-name"><?= $catalog['name'] ?></h3>
             <p><?=$catalog['description']?></p>
             <p> <a class="btn btn-default"  href="./Carousel/Carousel.html" role="button"> <span class="glyphicon glyphicon-plus"></span> Посмотреть</a></p>
-        </div><!-- /.col-lg-4 -->
+        </div>
         <?php }?>
-    </div><!-- /.row -->
+    </div>
 </div>
 <br>
-<h1 style="text-align: center">сотрудничаем </h1>
 
 <div class="container">
     <hr>
@@ -125,7 +115,6 @@
     </div>
 </section>
 
-
 <section class="section section--medium padding-bottom-0">
     <div class="container">
         <ul class="logo-bar">
@@ -154,14 +143,9 @@
     <hr>
 </div>
 
-<div class="row">
-    <div class="col-md-12 col-sm-12">
-        <div style="width: 100%; height: 370px;outline: 0; border: 0;" id="map">
-            <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=L6EXPO3e_tQbK8PVSs3OrCReVhyaCTlN&lang=ru_RU&sourceType=constructor"></script>
-        </div>
-    </div>
+<div style="width: 100%; height: 370px;outline: 0; border: 0;" id="map">
+    <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=L6EXPO3e_tQbK8PVSs3OrCReVhyaCTlN&lang=ru_RU&sourceType=constructor"></script>
 </div>
-
 
 <?php $this->renderTemplate('footer') ?>
 
