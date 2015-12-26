@@ -21,6 +21,7 @@
 
         /*index*/
         ->include_css('catalog.css')
+        ->include_css('logo.css')
 
 
     ?>
@@ -93,6 +94,60 @@
         <?php }?>
     </div><!-- /.row -->
 </div>
+<br>
+<h1 style="text-align: center">сотрудничаем </h1>
+
+<div class="container">
+    <hr>
+</div>
+
+<section class="section section--medium">
+    <div class="container">
+        <ul class="logo-bar">
+            <li>
+                <?php $ph->image('brands/iek.jpg', ['style' => 'height="52px; width="140px'])?>
+            </li>
+            <li>
+                <?php $ph->image('brands/viko.jpg', ['style' => 'height="52px; width="140px'])?>
+            </li>
+
+            <li>
+                <?php $ph->image('brands/tdm.jpg', ['style' => 'height="52px; width="140px'])?>
+            </li>
+            <li>
+                <?php $ph->image('brands/ff.jpg', ['style' => 'height="52px; width="140px'])?>
+            </li>
+            <li>
+                <?php $ph->image('brands/Nexans.png', ['style' => 'height="52px; width="140px'])?>
+            </li>
+
+        </ul>
+    </div>
+</section>
+
+
+<section class="section section--medium padding-bottom-0">
+    <div class="container">
+        <ul class="logo-bar">
+            <li>
+                <?php $ph->image('brands/abb.png', ['style' => 'height="52px; width="140px'])?>
+            </li>
+            <li>
+                <?php $ph->image('brands/gunsan.jpg', ['style' => 'height="52px; width="140px'])?>
+            </li>
+            <li>
+                <?php $ph->image('brands/legrand.jpg', ['style' => 'height="52px; width="140px'])?>
+            </li>
+            <li>
+                <?php $ph->image('brands/avtoprovod.jpg', ['style' => 'height="52px; width="140px'])?>
+            </li>
+            <li>
+                <?php $ph->image('brands/universal.png', ['style' => 'height="52px; width="140px'])?>
+            </li>
+        </ul>
+    </div>
+</section>
+
 
 <?php $this->renderTemplate('footer') ?>
 

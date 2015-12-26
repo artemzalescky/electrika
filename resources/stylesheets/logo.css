@@ -1,0 +1,38 @@
+
+img,ul,li,hr,footer,header,section{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+section{display:block}
+ul{list-style:none}
+.container{max-width:1200px;margin-left:auto;margin-right:auto;padding-left:15px;padding-right:15px}
+.container::after{clear:both;content:"";display:table}
+@media screen and (min-width: 860px){.container{padding-left:20px;padding-right:20px}}
+@media screen and (min-width: 1200px){.container{padding-left:40px;padding-right:40px}}
+
+.container .container{padding-left:0;padding-right:0}.container--large{max-width:1024px}
+.container--medium{max-width:840px}.container--small{max-width:680px}
+.container--smallest{max-width:520px}.container--full{width:100%;max-width:100%}
+.container--left{margin:0}.span1{float:left;display:block;margin-right:4.47761%;width:2.98507%}
+
+hr{height:0;border:0;padding:0;margin:15px 0;border-bottom:1px solid #d9d9d9;background-color:transparent}
+
+
+
+.logo-bar {display:box;display:-webkit-box;display:-webkit-flex;display:flex;box-pack:justify;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;display:-ms-flexbox}
+.logo-bar {-webkit-align-self:center;-ms-flex-item-align:center;align-self:center}
+
+.section{position:relative}
+.section::after{clear:both;content:"";display:table}
+.section--medium{padding-top:30px;padding-bottom:30px}
+
+.logo-bar-stacked .logo-bar{max-height:100px}
+@media screen and (max-width: 599px){.logo-bar{-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap}}
+.logo-bar img{max-width:70px;width:100%;height:auto;margin:0 10px}
+@media screen and (min-width: 400px){.logo-bar img{max-width:90px}}
+@media screen and (min-width: 500px){.logo-bar img{max-width:100px}}
+@media screen and (min-width: 600px){.logo-bar img{max-width:70px}}
+@media screen and (min-width: 700px){.logo-bar img{max-width:90px;margin:0}}
+@media screen and (min-width: 900px){.logo-bar img{max-width:110px}}
+@media screen and (min-width: 1024px){.logo-bar img{max-width:140px}}
+@media screen and (min-width: 800px){.container--medium .logo-bar img{max-width:100px}}
+.ie9 .logo-bar li{float:left;display:block;margin-right:4.47761%;width:12.91045%}
+.ie9 .logo-bar li:last-child{margin-right:0}
+
