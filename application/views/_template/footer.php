@@ -80,13 +80,12 @@
                 </div>
             </div>
 
-            <br /><br />
+            <br />
             <div class="row-fluid">
                 <div class="span12">
                     <p class="copyright">
                         Copyright © 2015 Your Company. All Rights Reserved.
                     </p>
-
                 </div>
             </div>
         </div>
