@@ -1,0 +1,38 @@
+/* Contact */
+ul#contact-info .icon {font-size:20px;float:left;line-height:25px;margin-right:10px;}
+ul#contact-info .field {font-weight:bold;}
+ul#contact-info {list-style:none; padding-left: 0px}
+
+
+/* Icons */
+[class*="social foundicon-"]:before {font-family: "SocialFoundicons";}
+[class*="general foundicon-"]:before {font-family: "GeneralFoundicons";}
+
+
+@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
+    .flex-video { padding-top: 0; }
+}
+
+.divPanel {}
+.divPanel.notop {padding-top:0px}
+.divPanel.nobottom {padding-bottom:0px}
+
+#divFooter {font-family: 'Open Sans', sans-serif; background-color: rgb(18, 18, 18); color: rgb(180, 173, 173); padding-top: 32px; line-height: 23px; font-size: 12px; text-transform: none; background-image: url(backgrounds/noisy_net.png); background-repeat: repeat repeat;}
+#divFooter a {color: rgb(132, 164, 51);}
+#divFooter h3 {color: rgb(180, 173, 173);}
+
+
+#footerOuterSeparator{margin-top: 55px; border-top-width: 1px; border-top-style: solid; border-top-color: rgb(242, 242, 242);}
+#decorative2 {position:fixed;top:0;left:0;right:0;z-index:1032}
+
+@media (max-width: 979px) {
+    #divLogo {margin-bottom:10px;}
+    #decorative2 {position:static;  height:auto;}
+}
+
+@media (max-width: 767px) {
+    #divFooter {margin-left:-20px;margin-right:-20px;padding-left:20px;padding-right:20px;}
+    #divBoxed > #divFooter {margin-left:0px;margin-right:0px;padding-left:0px;padding-right:0px;}
+
+    body > #footerOuterSeparator, body > #contentOuterSeparator {margin-left:-20px;margin-right:-20px;}
+}

@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+.image-preview {
+    max-height: 150px;
+    border: 2px solid #777;
+}

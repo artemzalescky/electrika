@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+#catalog-tree {
+    font-size: 18px;
+}
+
+#catalog-tree ul {
+    margin: 0 0 0 8px;
+    padding: 0;
+    border-left: 1px solid #c2c2c2;
+    list-style-type: none;
+}
+
+#catalog-tree ul li {
+    padding: 10px 10px 0 20px;
+}
+
+#catalog-tree .catalog-name {
+    text-decoration: none;
+}
+
+#catalog-tree .expander {
+    cursor: pointer;
+}
+
+#catalog-tree .arrow {
+    margin-right: 5px;
+}
+
+#catalog-tree .action {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#catalog-tree .closed {
+    display: none;
+}

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.underlined {
+    text-decoration: underline;
+}
+
+.exploded-textarea {
+    min-height: 150px !important;
+}
