@@ -82,6 +82,7 @@ class CatalogModel {
         if (!empty($validationErrors)) {
             PhException::throwErrors($validationErrors);
         }
+        $catalog['url'] = strtolower(str_replace(' ', '-', $catalog['url']));
         return $this->catalogDAO->add($catalog);
     }
 
