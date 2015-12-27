@@ -72,6 +72,14 @@ class CatalogModel {
         }
     }
 
+    public function calculateFullCatalogUrl(&$pathToCatalog) {
+        $currentUrl = '';
+        for ($i = 0; $i < count($pathToCatalog); $i++) {
+            $currentUrl .= '/' . $pathToCatalog[$i]['url'];
+            $pathToCatalog[$i]['fullUrl'] = $currentUrl;
+        }
+    }
+
     public function catalogExist($id) {
         $catalog = $this->getById($id);
         return !empty($catalog);

@@ -3,34 +3,32 @@
 namespace application\controllers;
 
 use application\models\CatalogModel;
+use application\models\ProductModel;
 use ph\controller\BaseController;
 
 class ProductController extends BaseController {
 
     public function show($catalogPathTokens) {
-        $lastUrlPart = !empty($catalogPathTokens) ? $catalogPathTokens[count($catalogPathTokens) - 1] : null;
+        $catalogUrl = !empty($catalogPathTokens) ? $catalogPathTokens[count($catalogPathTokens) - 2] : null;
+        $productId = !empty($catalogPathTokens) ? $catalogPathTokens[count($catalogPathTokens) - 1] : null;
 
-        if (!empty($catalogPathTokens) && !CatalogModel::getInstance()->catalogExistForUrl($lastUrlPart)) {
+        if (!empty($catalogPathTokens) && !CatalogModel::getInstance()->catalogExistForUrl($catalogUrl)) {
             $this->redirect('404');
         }
 
-        $pathToCatalog = CatalogModel::getInstance()->getPathToCatalogByUrl($lastUrlPart);
-        $this->calculateFullUrl($pathToCatalog);
+        $pathToCatalog = CatalogModel::getInstance()->getPathToCatalogByUrl($catalogUrl);
+        CatalogModel::getInstance()->calculateFullCatalogUrl($pathToCatalog);
         $currentCatalog = $pathToCatalog[count($pathToCatalog) - 1];
 
-        $nearestChildren = CatalogModel::getInstance()->getNearestChildren($currentCatalog['id']);
+        $product = ProductModel::getInstance()->getById($currentCatalog['id'], $productId);
+
+        if (empty($product)) {
+            $this->redirect('404');
+        }
 
         $this->setViewVariable('currentCatalog', $currentCatalog);
         $this->setViewVariable('pathToCatalog', $pathToCatalog);
-        $this->setViewVariable('nearestChildren', $nearestChildren);
+        $this->setViewVariable('product', $product);
         $this->render();
-    }
-
-    private function calculateFullUrl(&$pathToCatalog) {
-        $currentUrl = '';
-        for ($i = 0; $i < count($pathToCatalog); $i++) {
-            $currentUrl .= '/' . $pathToCatalog[$i]['url'];
-            $pathToCatalog[$i]['fullUrl'] = $currentUrl;
-        }
     }
 }

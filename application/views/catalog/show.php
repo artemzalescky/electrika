@@ -12,6 +12,20 @@
 
 <hr>
 
-<?php foreach ($nearestChildren as $child) {
-    $ph->link($child['name'], $currentCatalog['fullUrl'] . '/' . $child['url'])->tag('br');
-}
+<?php
+    if (!empty($nearestChildren)) {
+     foreach ($nearestChildren as $child) {
+         $ph->link($child['name'], $currentCatalog['fullUrl'] . '/' . $child['url'])->tag('br');
+     }
+     $ph->tag('hr');
+    }
+?>
+
+<?php
+    if (!empty($products)) {
+        foreach ($products as $product) {
+            $ph->link($product['name'], $product['fullUrl'])->tag('br');
+        }
+        $ph->tag('hr');
+    }
+?>

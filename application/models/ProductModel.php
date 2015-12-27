@@ -44,6 +44,18 @@ class ProductModel {
         }
     }
 
+    public function calculateFullProductsUrl(&$products, $parentFullUrl) {
+        $prefix = trim($parentFullUrl, '/');
+        if (strpos($prefix, 'catalog/') === 0) {
+            $prefix = substr($prefix, strlen('catalog/'));
+        }
+        $prefix = '/product/' . $prefix;
+
+        for ($i = 0; $i < count($products); $i++) {
+            $products[$i]['fullUrl'] = $prefix . '/' . $products[$i]['id'];
+        }
+    }
+
     public function checkProductExist($catalogId, $productId) {
         $productView = ['catalogId' => $catalogId, 'id' => $productId];
         $errors = $this->getCatalogExistenceValidationErrors($productView);
