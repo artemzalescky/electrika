@@ -43,8 +43,8 @@
             <?php $ph->image('Carousel/1.jpg', ['data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Резетки' ]) ?>
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Розетки</h1>
-                    <p>Продажа розеток всех производителей в Минске</p>
+                    <h1>Розетки и выключатели</h1>
+                    <p>Продажа розеток и выключателей всех моделей м производителей в Минске</p>
                     <p><a class="btn btn-lg btn-primary" href="./Carousel/Carousel.html" role="button">Подробнее</a></p>
                 </div>
             </div>
@@ -53,8 +53,8 @@
             <?php $ph->image('Carousel/2.jpg', ['data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Лампочкм' ]) ?>
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Лампочки</h1>
-                    <p> Продажа галогенных, энергосберегающих лампочек лучщих производителей мира</p>
+                    <h1>Светотехника</h1>
+                    <p> Продажа ламп накаливания, прожекторов светодиодных и много другого</p>
                     <p><a class="btn btn-lg btn-primary" href="./Carousel/Carousel.html" role="button">Подробнее</a></p>
                 </div>
             </div>
@@ -64,10 +64,10 @@
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Кабель и провод</h1>
-                    <p>Продажа кабеля в любом количестве и любой длины в Минске</p>
+                    <p>Продажа кабеля и провода в любом количестве и любой длины в Минске</p>
                     <p><a class="btn btn-lg btn-primary" href="./Carousel/Carousel.html" role="button">Подробнее</a></p>
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
     <a class="left carousel-control" href="http://bootstrap-3.ru/examples/carousel/#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
