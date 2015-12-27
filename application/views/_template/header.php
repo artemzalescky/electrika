@@ -27,16 +27,16 @@
                     ?>
                 </li>
                 <li>
-                    <?php $ph->link('Контакты', '/') ?>
+                    <?php $ph->link('Контакты', '/contacts') ?>
                 </li>
                 <li>
-                    <?php $ph->link('Доставка', '/') ?>
+                    <?php $ph->link('Доставка', '/delivery') ?>
                 </li>
                 <li>
-                    <?php $ph->link('О компании', '/') ?>
+                    <?php $ph->link('О компании', '/about') ?>
                 </li>
                 <li>
-                    <?php $ph->link('Новости', '/') ?>
+                    <?php $ph->link('Новости', '/news') ?>
                 </li>
                 <li><a class="btn" href="#">SIGN IN / SIGN UP</a></li>
             </ul>

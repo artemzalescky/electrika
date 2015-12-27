@@ -15,21 +15,21 @@
             <div class="col-md-3">
                 <h3>Последние новости</h3>
                 <p>
-                    <?php $ph->link('Сенсация №1', '#') ?>
+                    <?php $ph->link('Сенсация №1', '/news') ?>
                     <br>
                     <span style="text-transform:none;">11.11.2010</span>
                 </p>
                 <p>
-                    <?php $ph->link('Сенсация №2', '#') ?>
+                    <?php $ph->link('Сенсация №2', '/news') ?>
                     <br>
                     <span style="text-transform:none;">11.11.2011</span>
                 </p>
                 <p>
-                    <?php $ph->link('Сенсация №3', '#') ?><br>
+                    <?php $ph->link('Сенсация №3', '/news') ?><br>
                     <span style="text-transform:none;">11.11.2011</span>
                 </p>
                 <p>
-                    <?php $ph->link('Все новости', '#') ?>
+                    <?php $ph->link('Все новости', '/news') ?>
                 </p>
             </div>
             <div class="col-md-3">
