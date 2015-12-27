@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-           <? } ?>
+           <?php } ?>
         </div>
     </div>
-</div><!--/category-tab-->
+</div>
