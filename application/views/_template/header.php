@@ -1,6 +1,6 @@
 
 <!-- Fixed navbar -->
-<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+<div id="top-menu" class="navbar navbar-inverse navbar-fixed-top headroom" >
     <div class="container">
         <div class="navbar-header">
             <!-- Button for smallest screens -->
@@ -12,13 +12,19 @@
                 <li class="active">
                     <?php $ph->link('Главная', '/') ?>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Каталог <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Розетки и выключатели</a></li>
-                        <li><a href="#">Лампочки</a></li>
-                        <li><a href="#">Кабель и провод</a></li>
-                    </ul>
+                <li id="catalog-menu-item" class="dropdown">
+                    <?php
+                        $ph->link('Каталог <b class="caret"></b>', 'catalog', ['class' => 'dropdown-toggle', 'data-toggle' => 'dropdown']);
+                        if (!empty($mainCatalogs)) {
+                            $ph->tag_open('ul', ['class' => 'dropdown-menu', 'id' => 'catalog-dropdown-menu']);
+                            foreach ($mainCatalogs as $mainCatalog) {
+                                $ph->tag_open('li');
+                                $ph->link($mainCatalog['name'], '/catalog/' . $mainCatalog['url']);
+                                $ph->tag_close('li');
+                            }
+                            $ph->tag_close('ul');
+                        }
+                    ?>
                 </li>
                 <li>
                     <?php $ph->link('Контакты', '/') ?>
@@ -34,6 +40,6 @@
                 </li>
                 <li><a class="btn" href="#">SIGN IN / SIGN UP</a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </div>

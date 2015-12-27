@@ -1,0 +1,9 @@
+#top-menu {
+    background-color: #000 !important;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+#top-menu:hover {
+    opacity: 1;
+}

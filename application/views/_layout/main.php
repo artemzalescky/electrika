@@ -12,6 +12,7 @@
         ->include_system_js_lib('bootstrap-3.3.5-dist/bootstrap.min.js')
 
         /*Header*/
+        ->include_css('header/header.css')
         ->include_css('header/bootstrap-theme.css')
 
         /*Footer*/
