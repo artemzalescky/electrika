@@ -1,3 +1,8 @@
+<?php $ph->include_css('catalog.css')?>
+<?php $ph->include_css('logo.css')?>
+<?php $ph->include_css('productList.css')?>
+
+
 <ol class="breadcrumb">
     <?php foreach ($pathToCatalog as $part) {
         if ($part['id'] == $currentCatalog['id']) {
@@ -14,18 +19,14 @@
 
 <?php
     if (!empty($nearestChildren)) {
-     foreach ($nearestChildren as $child) {
-         $ph->link($child['name'], $currentCatalog['fullUrl'] . '/' . $child['url'])->tag('br');
-     }
+     $this->renderTemplate('childrenCatalog');
      $ph->tag('hr');
     }
 ?>
 
 <?php
     if (!empty($products)) {
-        foreach ($products as $product) {
-            $ph->link($product['name'], $product['fullUrl'])->tag('br');
-        }
+        $this->renderTemplate('productList');
         $ph->tag('hr');
     }
 ?>
