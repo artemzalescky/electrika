@@ -3,4 +3,9 @@
     position: relative;
     width: 100%;
     color: #e43117;
-  }
+}
+
+.catalog-short-description {
+    height: 40px;
+    overflow:hidden;
+}

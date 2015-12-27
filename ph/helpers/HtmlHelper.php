@@ -51,6 +51,17 @@ class HtmlHelper {
         return $this;
     }
 
+    public function link_open($url, $options = null) {
+        $options = $this->merge_options(['href' => $this->url($url)], $options);
+        $this->tag_open('a', $options);
+        return $this;
+    }
+
+    public function link_close() {
+        $this->tag_close('a');
+        return $this;
+    }
+
     public function link_back($name, $options = null) {
         return $this->link($name, $_SERVER['HTTP_REFERER'], $options);
     }
@@ -214,6 +225,11 @@ class HtmlHelper {
         } else {
             echo $text;
         }
+        return $this;
+    }
+
+    public function cut_text($text, $count) {
+        echo mb_substr($text, 0, $count, 'UTF-8');
         return $this;
     }
 
