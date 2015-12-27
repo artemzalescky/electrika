@@ -90,7 +90,7 @@
             <p class="catalog-short-description">
                 <?php
                     if (!empty($catalog['description'])) {
-                        $ph->cut_text($catalog['description'], 80)
+                        $ph->cut_text($catalog['description'], 65)
                             ->text('...');
                     }
                 ?>
