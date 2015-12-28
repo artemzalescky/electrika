@@ -20,7 +20,6 @@
 <?php
     if (!empty($nearestChildren)) {
      $this->renderTemplate('childrenCatalog');
-     $ph->tag('hr');
     }
 ?>
 
