@@ -27,6 +27,5 @@
 <?php
     if (!empty($products)) {
         $this->renderTemplate('productList');
-        $ph->tag('hr');
     }
 ?>

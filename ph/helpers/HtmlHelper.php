@@ -265,6 +265,11 @@ class HtmlHelper {
         return trim($url, '/');
     }
 
+    public function currentUrlWithoutParams() {
+        $uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
+        return 'http://' . $_SERVER['HTTP_HOST'] . $uri_parts[0];
+    }
+
     // ------------- system ---------------
 
     public function include_system_css($src) {

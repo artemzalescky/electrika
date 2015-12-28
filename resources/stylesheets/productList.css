@@ -6,6 +6,16 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
+h2.title {
+    color: #FE980F;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 15px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    position: relative;
+}
 
 h2.title:after{
     content: " ";
@@ -29,36 +39,54 @@ h2.title:before{
     margin-left: -110px;
 }
 
-.panel-title a {
-    color: #696763;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-h2.title {
-    color: #FE980F;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    margin: 0 15px;
-    text-transform: uppercase;
+.product-container {
     margin-bottom: 30px;
-    position: relative;
-}
-
-.product-image-wrapper{
-    border:1px solid #F7F7F5;
+    padding-top: 10px;
+    border: 1px solid #F7F7F5;
     overflow: hidden;
-    margin-bottom:30px;
 }
 
-.productinfo h2{
+.product-container .image-container {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    height: 180px;
+    width: 180px;
+}
+
+.product-container .image {
+    max-height: 180px;
+    max-width: 180px;
+}
+
+.product-container .name {
+    display: block;
+    height: 50px;
+    padding: 0 10px;
+    overflow: hidden;
+    color: #4f4f4f;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.product-container .price {
+    padding: 5px 0 10px 0;
     color: #FE980F;
     font-family: 'Roboto', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.product-container .price-currency {
+    color: #454545;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.product-container .not-available {
+    color: #dc0000;
+    font-size: 18px;
+    font-weight: normal;
 }
 
 .read-more {
@@ -78,15 +106,6 @@ h2.title {
     color: #FFFFFF;
 }
 
-.add-to{
-    margin-bottom: 10px;
-}
-
 .read-more i{
     margin-right:5px;
-}
-
-.read-more  :hover {
-    background: #FE980F;
-    color: #FFFFFF;
 }
