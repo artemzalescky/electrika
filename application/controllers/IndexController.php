@@ -8,8 +8,7 @@ use ph\controller\BaseController;
 class IndexController extends BaseController {
 
     public function index() {
-        $mainCatalogs =  CatalogModel::getInstance()->getNearestChildren(0);
-        $this->setViewVariable('mainCatalogs', $mainCatalogs);
+        $mainCatalogs = CatalogModel::getInstance()->getNearestChildren(0);
         $this->setViewVariable('nearestChildren', $mainCatalogs);
         $this->render([
             'layout' => 'index'

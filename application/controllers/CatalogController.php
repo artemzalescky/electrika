@@ -34,7 +34,6 @@ class CatalogController extends BaseController {
         $this->setViewVariable('currentCatalog', $currentCatalog);
         $this->setViewVariable('pathToCatalog', $pathToCatalog);
         $this->setViewVariable('nearestChildren', $nearestChildren);
-        $this->setViewVariable('mainCatalogs', CatalogModel::getInstance()->getNearestChildren(0));
         $this->setViewVariable('products', $products);
         $this->setViewVariable('productPageInfo', $productPageInfo);
         $this->render();
