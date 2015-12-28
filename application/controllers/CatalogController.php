@@ -47,7 +47,8 @@ class CatalogController extends BaseController {
 
         $countPerPage = 12;
         $pagesCount = ceil(count($products) / $countPerPage);
-        $currentPage = !empty($this->param('page')) ? intval($this->param('page')) : 1;
+        $currentPageParam = $this->param('page');
+        $currentPage = !empty($currentPageParam) ? intval($currentPageParam) : 1;
         if ($currentPage < 1) {
             $currentPage = 1;
         }
