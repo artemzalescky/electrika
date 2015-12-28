@@ -15,18 +15,18 @@
             <div class="col-md-3">
                 <h3>Последние новости</h3>
                 <p>
-                    <?php $ph->link('Сенсация №1', '/news') ?>
+                    <?php $ph->link('Мобильная версия сайта', '/news') ?>
                     <br>
-                    <span style="text-transform:none;">11.11.2010</span>
+                    <span style="text-transform:none;">20.12.2015</span>
                 </p>
                 <p>
-                    <?php $ph->link('Сенсация №2', '/news') ?>
+                    <?php $ph->link('Новый дизайн сайта', '/news') ?>
                     <br>
-                    <span style="text-transform:none;">11.11.2011</span>
+                    <span style="text-transform:none;">05.12.2015</span>
                 </p>
                 <p>
-                    <?php $ph->link('Сенсация №3', '/news') ?><br>
-                    <span style="text-transform:none;">11.11.2011</span>
+                    <?php $ph->link('Снижение цен на кабели и провода', '/news') ?><br>
+                    <span style="text-transform:none;">03.11.2015</span>
                 </p>
                 <p>
                     <?php $ph->link('Все новости', '/news') ?>
