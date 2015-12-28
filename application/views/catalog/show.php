@@ -19,7 +19,7 @@
 
 <?php
     if (!empty($nearestChildren)) {
-     $this->renderTemplate('childrenCatalog');
+        $this->renderTemplate('childrenCatalog');
     }
 ?>
 
