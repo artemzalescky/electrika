@@ -5,12 +5,19 @@
                 <h3>Каталог</h3>
                 <p>
                     <?php
-                        $ph->link('Розетки и выключатели', '/catalog')->single_tag('br')
-                            ->link('Лампочки', '/catalog')->single_tag('br')
-                            ->link('Кабель и провод', '/catalog')->single_tag('br')
-                            ->link('Светотехника', '/catalog')->single_tag('br')
-                            ->link('Стабилизаторы', '/catalog')->single_tag('br')
-                            ->link('Счётчики', '/catalog')->single_tag('br')
+                        $ph
+                            ->link('Кабель и провод', '/catalog/kabel-i-provod')->single_tag('br')
+                            ->link('Розетки и выключатели', '/catalog/rozetki-i-vykljuchateli')->single_tag('br')
+                            ->link('Корпуса металлические, боксы', '/catalog/korpusa-metallicheskie-i-boksy')->single_tag('br')
+                            ->link('Коробки распределительные', '/catalog/korobki-raspredelitelnye-raspajachnye')->single_tag('br')
+                            ->link('Модульное оборудование', '/catalog/modulnoe-oborudovanie')->single_tag('br')
+                            ->link('Светотехника', '/catalog/svetotehnika')->single_tag('br')
+                            ->link('Силовые разъемы', '/catalog/silovye-razjomy')->single_tag('br')
+                            ->link('Счётчики', '/catalog/schjotchiki')->single_tag('br')
+                            ->link('Стабилизаторы напряжения', '/catalog/stabilizatory-naprjazhenija')->single_tag('br')
+                            ->link('Системы для прокладки кабеля', '/catalog/sistemy-dlja-prokladki-kabelja')->single_tag('br')
+                            ->link('Аксессуары для монтажа', '/catalog/aksesuary-dlja-montazha')->single_tag('br')
+                            ->link('Труба ПНД', '/catalog/truba-pnd')->single_tag('br')
                     ?>
                 </p>
             </div>
