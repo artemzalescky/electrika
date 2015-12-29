@@ -102,6 +102,18 @@ class ProductController extends BaseController {
         }
     }
 
+    public function copy($catalogId, $productId) {
+        try {
+            ProductModel::getInstance()->checkProductExist($catalogId, $productId);
+            $product = ProductModel::getInstance()->getById($catalogId, $productId);
+            $product['description'] = urlencode($product['description']);  //impossible to pass newLineChar to url
+            $this->systemRedirect('/product/add/' . $catalogId . '?' . $this->array2ParamString($product, 'product', ['priceByr', 'priceUsd']));
+        } catch (PhException $e) {
+            messages::addGroup('error', $e->getErrors());
+            $this->systemRedirect('/catalog/editProducts/' . $catalogId);
+        }
+    }
+
     public function convertPrice($catalogId, $productId) {
         try {
             ProductModel::getInstance()->checkProductExist($catalogId, $productId);

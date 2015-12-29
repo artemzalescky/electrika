@@ -79,6 +79,9 @@ if (isset($products)) { ?>
                                         <li>
                                             <?php $ph->system_link('Пересчитать цену', '/product/convertPrice/' . $catalog['id'] . '/' . $product['id']) ?>
                                         </li>
+                                        <li>
+                                            <?php $ph->system_link('Копировать', '/product/copy/' . $catalog['id'] . '/' . $product['id']) ?>
+                                        </li>
                                     </ul>
                                 </div>
                                 <?php
