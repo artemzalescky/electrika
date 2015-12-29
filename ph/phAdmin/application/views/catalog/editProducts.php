@@ -44,7 +44,8 @@ if (isset($products)) { ?>
                                     } else {
                                         $ph->tag('span', 'Изображение отсутствует', [
                                             'class' => 'text-danger',
-                                            'style' => 'font-size: 0.7em; font-weight: bold'
+                                            'style' => 'font-size: 0.7em; font-weight: bold; cursor: pointer',
+                                            'onclick' => 'window.location.href = "' . $ph->system_url('/product/uploadImage/' . $catalog['id'] . '/' . $product['id']) . '"'
                                         ]);
                                     }
                                 ?>

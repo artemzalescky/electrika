@@ -6,7 +6,10 @@
         <div class="col-sm-3">
             <div class="product-container text-center">
                 <?php $ph->tag_open('a', ['href' => $ph->url($product['fullUrl']), 'class' => 'image-container'])
-                    ->tag('img', null, ['src' => $ph->path($product['imagePath']), 'class' => 'image'])
+                    ->tag('img', null, [
+                        'src' => !empty($product['imagePath']) ? $ph->path($product['imagePath']) : $ph->image_path('no-photo.jpg'),
+                        'class' => 'image'
+                    ])
                     ->tag_close('a')
                     ->link($product['name'], $product['fullUrl'], ['class' => 'name'])
                 ?>

@@ -60,11 +60,11 @@ h2.title:before{
 
 .product-container .name {
     display: block;
-    height: 50px;
-    padding: 0 10px;
+    height: 45px;
+    padding: 0 5px;
     overflow: hidden;
     color: #4f4f4f;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
 }
 
