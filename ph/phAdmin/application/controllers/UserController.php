@@ -122,9 +122,9 @@ class UserController extends BaseController {
             $user = UserModel::getInstance()->getById($userId);
             UserModel::getInstance()->delete($userId);
             messages::add('User_Deleted', ['login' => $user['login']], 'success');
+            $this->systemRedirect('/user');
         } catch (PhException $e) {
             messages::addGroup('error', $e->getErrors());
-        } finally {
             $this->systemRedirect('/user');
         }
     }

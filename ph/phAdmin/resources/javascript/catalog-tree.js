@@ -1,6 +1,6 @@
 function CatalogTree(opts) {
     var holderElem = opts.holderElem;
-    var baseCatalogPath = opts.baseCatalogPath
+    var baseCatalogPath = opts.baseCatalogPath;
 
     holderElem.on('click', function(e) {
         var clickedElem = $(e.target);

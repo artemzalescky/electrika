@@ -58,10 +58,13 @@ class RouteData {
     }
 
     public static function isValid($routeData) {
-        return !empty($routeData)
-            && get_class($routeData) == get_class(new self)
-            && !empty($routeData->getRequestType())
-            && !empty($routeData->getControllerName())
-            && !empty($routeData->getActionName());
+        if (empty($routeData) || get_class($routeData) != get_class(new self)) {
+            return false;
+        }
+
+        $requestType = $routeData->getRequestType();
+        $controllerName = $routeData->getControllerName();
+        $actionName = $routeData->getActionName();
+        return !empty($requestType) && !empty($controllerName) && !empty($actionName);
     }
 }

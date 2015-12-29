@@ -61,8 +61,8 @@ class ImageUtil {
             if ($deleteSource) {
                 FileUtil::deleteFile($source);
             }
-        }
-         finally {
+            imagedestroy($tempImage);
+        } catch (\Exception $e) {
             imagedestroy($tempImage);
         }
     }

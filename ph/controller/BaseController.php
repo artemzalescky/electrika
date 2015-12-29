@@ -76,7 +76,8 @@ class BaseController {
     }
 
     private function checkViewExist($viewData) {
-        if (empty($viewData->getViewPath())) {
+        $viewPath = $viewData->getViewPath();
+        if (empty($viewPath)) {
             $this->redirect("/404");
         }
     }
