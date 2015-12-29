@@ -46,7 +46,9 @@
                 <div class="carousel-caption">
                     <h1>Розетки и выключатели</h1>
                     <p>Продажа розеток и выключателей всех моделей м производителей в Минске</p>
-                    <p><a class="btn btn-lg btn-primary" href="./Carousel/Carousel.html" role="button">Подробнее</a></p>
+                    <p>
+                        <?php $ph->link('Подробнее', '/catalog/rozetki-i-vykljuchateli', ['class' => 'btn btn-lg btn-primary', 'role' => 'button']) ?>
+                    </p>
                 </div>
             </div>
         </div>
@@ -56,7 +58,9 @@
                 <div class="carousel-caption">
                     <h1>Светотехника</h1>
                     <p> Продажа ламп накаливания, прожекторов светодиодных и много другого</p>
-                    <p><a class="btn btn-lg btn-primary" href="./Carousel/Carousel.html" role="button">Подробнее</a></p>
+                    <p>
+                        <?php $ph->link('Подробнее', '/catalog/svetotehnika', ['class' => 'btn btn-lg btn-primary', 'role' => 'button']) ?>
+                    </p>
                 </div>
             </div>
         </div>
@@ -66,7 +70,9 @@
                 <div class="carousel-caption">
                     <h1>Кабель и провод</h1>
                     <p>Продажа кабеля и провода в любом количестве и любой длины в Минске</p>
-                    <p><a class="btn btn-lg btn-primary" href="./Carousel/Carousel.html" role="button">Подробнее</a></p>
+                    <p>
+                        <?php $ph->link('Подробнее', '/catalog/kabel-i-provod', ['class' => 'btn btn-lg btn-primary', 'role' => 'button']) ?>
+                    </p>
                 </div>
             </div> 
         </div>
