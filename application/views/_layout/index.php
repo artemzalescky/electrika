@@ -90,9 +90,11 @@
                 <?php $ph->image('brands/iek.jpg', ['style' => 'height="52px; width="140px'])?>
             </li>
             <li>
+                <?php $ph->image('brands/EATON.gif', ['style' => 'height="52px; width="140px'])?>
+            </li>
+            <li>
                 <?php $ph->image('brands/viko.jpg', ['style' => 'height="52px; width="140px'])?>
             </li>
-
             <li>
                 <?php $ph->image('brands/tdm.jpg', ['style' => 'height="52px; width="140px'])?>
             </li>
@@ -112,6 +114,9 @@
         <ul class="logo-bar">
             <li>
                 <?php $ph->image('brands/abb.png', ['style' => 'height="52px; width="140px'])?>
+            </li>
+            <li>
+                <?php $ph->image('brands/EKF.jpg', ['style' => 'height="52px; width="140px'])?>
             </li>
             <li>
                 <?php $ph->image('brands/gunsan.jpg', ['style' => 'height="52px; width="140px'])?>
