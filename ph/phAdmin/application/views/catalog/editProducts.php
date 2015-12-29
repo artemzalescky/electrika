@@ -90,6 +90,7 @@ if (isset($products)) { ?>
                 </form>
             </div>
 <?php   }
+        $ph->single_tag('hr')->system_link('Добавить новый товар', '/product/add/' . $catalog['id'], ['class' => 'btn btn-primary']);
     } else { ?>
         <div class="panel panel-info">
             <div class="panel-heading"> Товары отсутствуют </div>
