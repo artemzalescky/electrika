@@ -76,7 +76,7 @@ class ProductDAO extends DbAccessor {
     public function createProductsTable($catalogId) {
         $sql = "CREATE TABLE IF NOT EXISTS product_{$catalogId} ("
                     ."id int(6) NOT NULL AUTO_INCREMENT ,"
-                    ."name varchar(50) NOT NULL ,"
+                    ."name varchar(100) NOT NULL ,"
                     ."description text NOT NULL ,"
                     ."priority int(2) unsigned NOT NULL DEFAULT '0' ,"
                     ."available int(1) unsigned NOT NULL DEFAULT '1' ,"
