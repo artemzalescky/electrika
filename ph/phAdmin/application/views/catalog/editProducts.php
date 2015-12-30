@@ -12,7 +12,7 @@ if (isset($products)) { ?>
             <div class="well">
                 <form action="<?= $ph->system_url('/catalog/update/' . $catalog['id'])?>" method="post" class="form-horizontal">
                     <fieldset>
-                        <legend> <?= $product['name'] ?> </legend>
+                        <legend> <?= $product['name'] ?> <div style="position:relative; float:right; font-size:15px"># <?= $product['id'] ?></div> </legend>
                         <div class="form-group">
                             <div class="col-lg-2">
                                 <b><em><span class="text-danger"><?= number_format($product['priceByr'], 0, '.', ' ') ?></span></em></b>&nbsp; BYR <br>
