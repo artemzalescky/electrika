@@ -1,0 +1,12 @@
+.catalog-container .image-container {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 140px;
+    height: 140px;
+}
+
+.catalog-container .image {
+    max-width: 140px;
+    max-height: 140px;
+}

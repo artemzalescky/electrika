@@ -1,6 +1,6 @@
 <?php $ph->include_css('catalog.css')?>
 <?php $ph->include_css('logo.css')?>
-<?php $ph->include_css('productList.css')?>
+<?php $ph->include_css('product-list.css')?>
 
 
 <ol class="breadcrumb">
@@ -19,12 +19,12 @@
 
 <?php
     if (!empty($nearestChildren)) {
-        $this->renderTemplate('childrenCatalog');
+        $this->renderTemplate('children-catalog');
     }
 ?>
 
 <?php
     if (!empty($products)) {
-        $this->renderTemplate('productList');
+        $this->renderTemplate('product-list');
     }
 ?>

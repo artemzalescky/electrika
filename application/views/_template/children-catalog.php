@@ -1,13 +1,25 @@
+<?php $ph->include_css('children-catalog.css') ?>
+
 <div class="container marketing">
     <div class="row">
       <?php  foreach($nearestChildren as $catalog) { ?>
-    <div class="col-lg-4">
-        <?php $ph->image_link('catalog/'.$catalog['id'].'.jpeg', '/catalog/' . $catalog['url'], [
-            'class' => 'img-circle',
-            'data-src' => 'holder.js/140x140',
-            'style' => 'max-width: 140px; max-height: 140px;'
-        ])
-            ->link_open('/catalog/' . $catalog['url'])
+    <div class="col-lg-4 catalog-container">
+        <?php
+        $ph->link_open('/catalog/' . $catalog['url'], ['class' => 'image-container']);
+            if (\application\models\CatalogModel::getInstance()->imageExist($catalog['id'])) {
+                $ph->image('catalog/'.$catalog['id'].'.jpeg', [
+                    'class' => 'img-circle image',
+                    'data-src' => 'holder.js/140x140'
+                ]);
+            } else {
+                $ph->image('no-photo.jpg', [
+                    'class' => 'img-circle image',
+                    'data-src' => 'holder.js/140x140'
+                ]);
+            }
+            $ph->link_close();
+
+            $ph->link_open('/catalog/' . $catalog['url'])
             ->tag('h4', $catalog['name'], ['class' => 'catalog-name'])
             ->tag_close('a');
         ?>

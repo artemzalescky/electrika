@@ -81,7 +81,7 @@
     <a class="right carousel-control" href="http://bootstrap-3.ru/examples/carousel/#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div><!-- /.carousel -->
 
-<?php $this->renderTemplate('childrenCatalog') ?>
+<?php $this->renderTemplate('children-catalog') ?>
 
 <br>
 
