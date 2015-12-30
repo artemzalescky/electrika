@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 29 2015 г., 22:16
+-- Время создания: Дек 30 2015 г., 13:16
 -- Версия сервера: 5.6.20
 -- Версия PHP: 5.5.15
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `catalog` (
   `url` varchar(50) NOT NULL,
   `description` text NOT NULL,
   `priority` int(2) unsigned NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=72 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=73 ;
 
 --
 -- Дамп данных таблицы `catalog`
@@ -72,7 +72,7 @@ INSERT INTO `catalog` (`id`, `parent_id`, `name`, `url`, `description`, `priorit
 (30, 2, 'Viko Carmen', 'viko-carmen', 'У нас можно приобрести vico carmen всех размеров и разновидностей', 0),
 (31, 2, 'Viko Karre', 'viko-karre', 'У нас можно приобрести vico karre всех размеров и разновидностей', 0),
 (32, 2, 'Lezard Mira', 'lezard-mira', 'У нас можно приобрести lezard mira всех размеров и разновидностей', 0),
-(33, 2, 'Legtand Etika', 'legtand-etika', 'У нас можно приобрести legtand etika всех размеров и разновидностей', 0),
+(33, 2, 'Legrand Etika', 'legrand-etika', 'У нас можно приобрести legtand etika всех размеров и разновидностей', 0),
 (34, 2, 'Legrand Valena', 'legrand-valena', 'У нас можно приобрести legrand valena всех размеров и разновидностей', 0),
 (35, 2, 'Legrand Quteo', 'legrand-quteo', 'У нас можно приобрести legrand quteo всех размеров и разновидностей', 0),
 (36, 3, 'ЩРн', 'shhrn', 'У нас можно приобрести щрн всех размеров и разновидностей', 0),
@@ -101,7 +101,8 @@ INSERT INTO `catalog` (`id`, `parent_id`, `name`, `url`, `description`, `priorit
 (68, 10, 'Кабель-канал "Промрукав"', 'kabel-kanal-promrukav', 'У нас можно приобрести "промрукав" 2-й замок сосна всех размеров и разновидностей', 0),
 (69, 6, 'Светильники', 'svetilniki', '', 0),
 (70, 6, 'Датчики движения ', 'datchiki-dvizhenija-', '', 0),
-(71, 6, 'Светодиодные лампы', 'svetodiodnye-lampy', '', 0);
+(71, 6, 'Светодиодные лампы', 'svetodiodnye-lampy', '', 0),
+(72, 2, 'ABB Basic 55', 'abb-basic', 'У нас можно приобрести розетки и выключатели ABB Basic 55 на любой вкус', 0);
 
 -- --------------------------------------------------------
 
@@ -1063,14 +1064,103 @@ CREATE TABLE IF NOT EXISTS `product_33` (
   `measure` varchar(10) NOT NULL DEFAULT 'шт.',
   `price_usd` float unsigned NOT NULL DEFAULT '0',
   `price_byr` int(10) unsigned NOT NULL DEFAULT '0'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Дамп данных таблицы `product_33`
 --
 
 INSERT INTO `product_33` (`id`, `name`, `description`, `priority`, `available`, `measure`, `price_usd`, `price_byr`) VALUES
-(1, 'Выключатель Legtand Etika', 'Выключатель Legtand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nЦвет: белый', 0, 1, 'шт.', 1.43, 26200);
+(1, 'Выключатель Legrand Etika', 'Выключатель Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.43, 26200),
+(2, 'Выключатель на 2 направления Legrand Etika', 'Выключатель на 2 направления Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.86, 34100),
+(3, 'Выключатель с подсветкой Legrand Etika', 'Выключатель с подсветкой Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.08, 38200),
+(4, 'Выключатель двухклавишный Legrand Etika', 'Выключатель двухклавишный Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.13, 39100),
+(5, 'Выключатель 2клавишный с подсветкой Legrand Etika', 'Выключатель двухклавишный с подсветкой Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.86, 52500),
+(6, 'Розетка 2P 10/16A Legrand Etika', 'Розетка 2P 10/16A Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.37, 25100),
+(7, 'Розетка 2P+E нем. стд. Legrand Etika', 'Розетка 2P+E нем. стд.  Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.64, 30100),
+(8, 'Розетка телефонная 1хRJ-11 4 конт. Legrand Etika', 'Розетка телефонная 1хRJ-11 4 конт. Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.9, 53200),
+(9, 'Розетка RJ11+RJ45 5E UTP Legrand Etika', 'Розетка RJ11+RJ45 5E UTP Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 7.52, 138000),
+(10, 'Розетка 1хRJ-45 UTP CAT5E 8конт. Legrand Etika', 'Розетка 1хRJ-45 UTP CAT5E 8конт. Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 4.69, 86000),
+(11, 'Розетка TV звезда 2дБ, 0-2400MHz Legrand Etika', 'Розетка TV звезда 2дБ, 0-2400MHz Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 3.5, 64200),
+(12, 'Рамка 1 пост Legrand Etika', 'Рамка 1 пост Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 0.35, 6400),
+(13, 'Рамка 2 поста Legrand Etika', 'Рамка 2 поста Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 0.67, 12300),
+(14, 'Рамка 3 поста Legrand Etika', 'Рамка 3 поста Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.23, 22600),
+(15, 'Рамка 4 поста Legrand Etika', 'Рамка 4 поста Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.08, 38200),
+(16, 'Рамка 5 постов Legrand Etika', 'Рамка 5 постов Legrand Etika\r\nПроизводитель: Legrand\r\nСерия: Etika\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.76, 50600);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `product_34`
+--
+
+CREATE TABLE IF NOT EXISTS `product_34` (
+`id` int(6) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text NOT NULL,
+  `priority` int(2) unsigned NOT NULL DEFAULT '0',
+  `available` int(1) unsigned NOT NULL DEFAULT '1',
+  `measure` varchar(10) NOT NULL DEFAULT 'шт.',
+  `price_usd` float unsigned NOT NULL DEFAULT '0',
+  `price_byr` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+
+--
+-- Дамп данных таблицы `product_34`
+--
+
+INSERT INTO `product_34` (`id`, `name`, `description`, `priority`, `available`, `measure`, `price_usd`, `price_byr`) VALUES
+(1, 'Светорегулятор 400 Вт Legrand Valena', 'Светорегулятор 400 Вт Legrand Valena\r\nПроизводитель : Legrand\r\nСерия : Valena\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 35.18, 645400),
+(2, 'Выключатель Legrand Valena', 'Выключатель  Legrand Valena\r\nПроизводитель : Legrand\r\nСерия : Valena\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.95, 54100),
+(3, 'Выключатель 2-клавишный Legrand Valena', 'Выключатель 2-клавишный Legrand Valena\r\nПроизводитель : Legrand\r\nСерия : Valena\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 4.8, 88100),
+(4, 'Выключатель 2-клавишный с подсветкой Legrand Valena', 'Выключатель 2-клавишный с подсветкой Legrand Valena\r\nПроизводитель : Legrand\r\nСерия : Valena\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 9.03, 165700),
+(5, 'Выключатель 2-полюсный Legrand Valena', 'Выключатель 2-полюсный Legrand Valena\r\nПроизводитель : Legrand\r\nСерия : Valena\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 8.15, 149500),
+(6, 'Выключатель 3-полюсный Legrand Valena', 'Выключатель 3-полюсный Legrand Valena\r\nПроизводитель : Legrand\r\nСерия : Valena\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 13.79, 253000),
+(7, 'Выключатель с подсветкой Legrand Valena', 'Выключатель с подсветкой Legrand Valena\r\nПроизводитель : Legrand\r\nСерия : Valena\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 7.34, 134700),
+(8, 'Переключатель на 2 направления Legrand Valena', 'Переключатель на 2 направления Legrand Valena\r\nПроизводитель : Legrand\r\nСерия : Valena\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 4.01, 73600),
+(9, 'Розетка 2P 10/16A Legrand Valena', 'Розетка 2P 10/16A Legrand Valena\r\nПроизводитель : Legrand\r\nСерия : Valena\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.84, 52100),
+(10, 'Розетка 2P+E нем. стд. Legrand Valena', 'Розетка 2P+E нем. стд. Legrand Valena\r\nПроизводитель : Legrand\r\nСерия : Valena\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.86, 52500),
+(11, 'Розетка 1хRJ-45 UTP CAT5E 8конт. Legrand Valena', 'Розетка 1хRJ-45 UTP CAT5E 8конт. Legrand Valena\r\nПроизводитель : Legrand\r\nСерия : Valena\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 9.86, 180900),
+(12, 'Розетка телеф. 1хRJ 11 4 конт. Legrand Valena', 'Розетка телеф. 1хRJ 11 4 конт. Legrand Valena\r\nПроизводитель : Legrand\r\nСерия : Valena\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 6.11, 112100),
+(13, 'Розетка TV простая 2400MHz Legrand Valena', 'Розетка TV простая 2400MHz Legrand Valena\r\nПроизводитель : Legrand\r\nСерия : Valena\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 7.3, 133900);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `product_35`
+--
+
+CREATE TABLE IF NOT EXISTS `product_35` (
+`id` int(6) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text NOT NULL,
+  `priority` int(2) unsigned NOT NULL DEFAULT '0',
+  `available` int(1) unsigned NOT NULL DEFAULT '1',
+  `measure` varchar(10) NOT NULL DEFAULT 'шт.',
+  `price_usd` float unsigned NOT NULL DEFAULT '0',
+  `price_byr` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+
+--
+-- Дамп данных таблицы `product_35`
+--
+
+INSERT INTO `product_35` (`id`, `name`, `description`, `priority`, `available`, `measure`, `price_usd`, `price_byr`) VALUES
+(1, 'Выключатель Legrand Quteo', 'Выключатель Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.49, 27300),
+(2, 'Выключатель 2-клавишный Legrand Quteo', 'Выключатель 2-клавишный Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.78, 32700),
+(3, 'Переключатель на 2 направления Legrand Quteo', 'Переключатель на 2 направления Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.81, 33200),
+(4, 'Розетка 2P 10/16A Legrand Quteo', 'Розетка 2P 10/16A Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.39, 25500),
+(5, 'Розетка 2х2P моноблок Legrand Quteo', 'Розетка 2х2P моноблок Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.88, 34500),
+(6, 'Розетка 2P+E нем. стд. Legrand Quteo', 'Розетка 2P+E нем. стд. Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.49, 27300),
+(7, 'Розетка 2x2P+E нем. стд. Legrand Quteo', 'Розетка 2x2P+E нем. стд. Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.25, 41300),
+(8, 'Розетка 2P+E нем. стд. со шторками Legrand Quteo', 'Розетка 2P+E нем. стд. со шторками Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.61, 29500),
+(9, 'Розетка 2x2P E нем. стд. со шторками Legrand Quteo', 'Розетка 2x2P E нем. стд. со шторками Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.46, 45100),
+(10, 'Розетка 3x2P E нем. стд. со шторками Legrand Quteo', 'Розетка 3x2P E нем. стд. со шторками Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 6.09, 111700),
+(11, 'Блок установочный до 4 постов Legrand Quteo', 'Блок установочный до 4 постов Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 5.62, 103100),
+(12, 'Блок установочный до 6 постов Legrand Quteo', 'Блок установочный до 6 постов Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 7.66, 140500),
+(13, 'Розетка телеф. 1хRJ-11 4-конт. Legrand Quteo', 'Розетка телеф. 1хRJ-11 4-конт. Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.48, 45500),
+(14, 'Розетка 1хRJ-45 5E UTP Legrand Quteo', 'Розетка 1хRJ-45 5E UTP Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 4.86, 89200),
+(15, 'Розетка TV простая 1.5dB Legrand Quteo', 'Розетка TV простая 1.5dB Legrand Quteo\r\nПроизводитель : Legrand\r\nСерия : Quteo\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.77, 50800);
 
 -- --------------------------------------------------------
 
@@ -1348,6 +1438,50 @@ CREATE TABLE IF NOT EXISTS `product_71` (
 INSERT INTO `product_71` (`id`, `name`, `description`, `priority`, `available`, `measure`, `price_usd`, `price_byr`) VALUES
 (1, 'LB-26 80LED (7W) 230V G5.3 2700K(4000K, 6400K) MR1', 'Лампы светодиодные 220V. \r\nСветодиодные лампы в несколько раз экономичнее по сравнению с лампами накаливания: работают до 50 000 часов или более 10 лет ! Вы экономите на эксплуатационных расходах (В свете последних подорожаний электроэнергии - это очень актуально.', 0, 1, 'шт.', 2.67, 49000);
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `product_72`
+--
+
+CREATE TABLE IF NOT EXISTS `product_72` (
+`id` int(6) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` text NOT NULL,
+  `priority` int(2) unsigned NOT NULL DEFAULT '0',
+  `available` int(1) unsigned NOT NULL DEFAULT '1',
+  `measure` varchar(10) NOT NULL DEFAULT 'шт.',
+  `price_usd` float unsigned NOT NULL DEFAULT '0',
+  `price_byr` int(10) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+
+--
+-- Дамп данных таблицы `product_72`
+--
+
+INSERT INTO `product_72` (`id`, `name`, `description`, `priority`, `available`, `measure`, `price_usd`, `price_byr`) VALUES
+(1, 'Розетка телефонная 1хRJ-11 4 конт. ABB Basic 55', 'Розетка телефонная 1хRJ-11 4 конт. ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость\r\nПримечание : лицевая накладка заказывается отдельно', 0, 1, 'шт.', 8.95, 164200),
+(2, 'Розетка телефонная 2хRJ-11 4 конт. ABB Basic 55', 'Розетка телефонная 2хRJ-11 4 конт. ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость\r\nПримечание : лицевая накладка заказывается отдельно', 0, 1, 'шт.', 11.95, 219200),
+(3, 'Розетка 1хRJ-45 UTP CAT5E 8конт. ABB Basic 55', 'Розетка 1хRJ-45 UTP CAT5E 8конт. ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость\r\nПримечание : лицевая накладка заказывается отдельно', 0, 1, 'шт.', 11.49, 210800),
+(4, 'Выключатель 1-клавишный ABB Basic 55', 'Выключатель 1-клавишный ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 3.46, 63500),
+(5, 'Выключатель с подсветкой ABB Basic 55', 'Выключатель с подсветкой ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 5.4, 99100),
+(6, 'Переключатель на 2 направления ABB Basic 55', 'Переключатель на 2 направления ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 3.51, 64400),
+(7, 'Выключатель 2-клавишный ABB Basic 55', 'Выключатель 2-клавишный ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 4.74, 87000),
+(8, 'Выключатель 2-клавишный с подсветкой ABB Basic 55', 'Выключатель 2-клавишный ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 9.06, 166200),
+(9, 'Переключатель промежуточный ABB Basic 55', 'Переключатель промежуточный ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 8.07, 148000),
+(10, 'Выключатель 3-клавишный с подсветкой ABB Basic 55', 'Выключатель 3-клавишный ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 19.1, 350400),
+(11, 'Розетка 2P+E нем. стд. ABB Basic 55', 'Розетка 2P+E нем. стд. ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.99, 36500),
+(12, ' Розетка 2P+E нем. стд. со шторками ABB Basic 55', ' Розетка 2P+E нем. стд. со шторками ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 3.46, 63500),
+(13, ' Розетка 2P+E нем. стд. с крышкой ABB Basic 55', 'Розетка 2P+E нем. стд. с крышкой ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 5, 91700),
+(14, 'Розетка 2x2P+E нем. стд. ABB Basic 55', 'Розетка 2x2P+E нем. стд. ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 5.05, 92600),
+(15, 'Розетка 2x2P+E нем. стд. с защитными шторками ABB Basic 55', 'Розетка 2x2P+E нем. стд. с защитными шторками ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 7.15, 131200),
+(16, 'Розетка TV простая 2400MHz ABB Basic 55', 'Розетка TV простая 2400MHz ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 6.39, 117200),
+(17, 'Рамка на 1 пост ABB Basic 55', 'Рамка на 1 пост ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 0.83, 15200),
+(18, 'Рамка на 2 поста ABB Basic 55', 'Рамка на 2 поста ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 1.45, 26600),
+(19, 'Рамка на 3 поста ABB Basic 55', 'Рамка на 3 поста ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 2.59, 47500),
+(20, 'Рамка на 4 поста ABB Basic 55', 'Рамка на 4 поста ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 4.97, 91200),
+(21, 'Рамка на 5 постов ABB Basic 55', 'Рамка на 5 постов ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 8.23, 151000);
+
 --
 -- Indexes for dumped tables
 --
@@ -1527,6 +1661,18 @@ ALTER TABLE `product_33`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product_34`
+--
+ALTER TABLE `product_34`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product_35`
+--
+ALTER TABLE `product_35`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `product_54`
 --
 ALTER TABLE `product_54`
@@ -1581,6 +1727,12 @@ ALTER TABLE `product_71`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product_72`
+--
+ALTER TABLE `product_72`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1588,7 +1740,7 @@ ALTER TABLE `product_71`
 -- AUTO_INCREMENT for table `catalog`
 --
 ALTER TABLE `catalog`
-MODIFY `id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=73;
 --
 -- AUTO_INCREMENT for table `ph_user`
 --
@@ -1723,7 +1875,17 @@ MODIFY `id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
 -- AUTO_INCREMENT for table `product_33`
 --
 ALTER TABLE `product_33`
-MODIFY `id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `product_34`
+--
+ALTER TABLE `product_34`
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `product_35`
+--
+ALTER TABLE `product_35`
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `product_54`
 --
@@ -1769,6 +1931,11 @@ MODIFY `id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 ALTER TABLE `product_71`
 MODIFY `id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `product_72`
+--
+ALTER TABLE `product_72`
+MODIFY `id` int(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
