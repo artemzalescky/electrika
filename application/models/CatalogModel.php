@@ -131,7 +131,8 @@ class CatalogModel {
             'id' => 0,
             'parentId' => null,
             'name' => 'Каталог',
-            'url' => 'catalog'
+            'url' => 'catalog',
+            'fullUrl' => 'catalog'
         ];
     }
 

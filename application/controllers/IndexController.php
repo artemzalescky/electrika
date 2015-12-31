@@ -9,6 +9,7 @@ class IndexController extends BaseController {
 
     public function index() {
         $mainCatalogs = CatalogModel::getInstance()->getNearestChildren(0);
+        $this->setViewVariable('currentCatalog', CatalogModel::getInstance()->getRootCatalog());
         $this->setViewVariable('nearestChildren', $mainCatalogs);
         $this->render([
             'layout' => 'index'

@@ -5,7 +5,7 @@
       <?php  foreach($nearestChildren as $catalog) { ?>
     <div class="col-lg-4 catalog-container">
         <?php
-        $ph->link_open('/catalog/' . $catalog['url'], ['class' => 'image-container']);
+        $ph->link_open($currentCatalog['fullUrl'] . '/' . $catalog['url'], ['class' => 'image-container']);
             if (\application\models\CatalogModel::getInstance()->imageExist($catalog['id'])) {
                 $ph->image('catalog/'.$catalog['id'].'.jpeg', [
                     'class' => 'img-circle image',
@@ -19,7 +19,7 @@
             }
             $ph->link_close();
 
-            $ph->link_open('/catalog/' . $catalog['url'])
+            $ph->link_open($currentCatalog['fullUrl'] . '/' . $catalog['url'])
             ->tag('h4', $catalog['name'], ['class' => 'catalog-name'])
             ->tag_close('a');
         ?>
@@ -33,7 +33,7 @@
         </p>
         <p>
             <?php
-            $ph->link_open('/catalog/' . $catalog['url'], ['class' => 'btn btn-default'])
+            $ph->link_open($currentCatalog['fullUrl'] . '/' . $catalog['url'], ['class' => 'btn btn-default'])
                 ->tag('span', null, ['class' => 'glyphicon glyphicon-list'])
                 ->text(' Посмотреть')
                 ->link_close('a');
