@@ -16,8 +16,12 @@
                 <div class="price">
                     <?php
                         if ($product['available']) {
-                            $ph->text(number_format($product['priceByr'], 0, '.', ' ') . ' ')
-                                ->tag('span', 'руб.', ['class' => 'price-currency']);
+                            if (!empty($product['priceByr'])) {
+                                $ph->text(number_format($product['priceByr'], 0, '.', ' ') . ' ')
+                                    ->tag('span', 'руб.', ['class' => 'price-currency']);
+                            } else {
+                                $ph->tag('span', 'Цену уточняйте', ['class' => 'price-currency']);
+                            }
                         } else {
                             $ph->tag('span', 'Нет в наличии', ['class' => 'not-available']);
                         }
