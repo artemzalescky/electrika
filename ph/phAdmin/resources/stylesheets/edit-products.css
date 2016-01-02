@@ -1,0 +1,14 @@
+.product-title {
+    cursor: pointer;
+}
+
+.small-reference {
+    font-size: 0.7em;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.small-reference:hover {
+    text-decoration: none;
+}

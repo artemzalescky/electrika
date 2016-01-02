@@ -1,4 +1,8 @@
-<?php $this->renderTemplate('catalog-edit-menu');
+<?php
+
+$ph->include_system_css('edit-products.css');
+
+$this->renderTemplate('catalog-edit-menu');
 $this->renderTemplate('catalog-editProducts-header');
 if (isset($products)) {
     $this->renderTemplate('catalog-editProducts-menu');
@@ -8,11 +12,17 @@ $ph->renderAllMessages();
 
 if (isset($products)) { ?>
     <?php if (!empty($products)) {
-        foreach ($products as $product) { ?>
+        for ($i = 0; $i < count($products); $i++) { $product = $products[$i] ?>
             <div class="well">
                 <form action="<?= $ph->system_url('/catalog/update/' . $catalog['id'])?>" method="post" class="form-horizontal">
                     <fieldset>
-                        <legend> <?= $product['name'] ?> <div style="position:relative; float:right; font-size:15px"># <?= $product['id'] ?></div> </legend>
+                        <legend>
+                            <?php $ph->tag('span', $product['name'], [
+                                'class' => 'product-title',
+                                'onclick' => 'window.location.href = "' . $ph->system_url('/product/edit/' . $catalog['id'] . '/' . $product['id']) . '"'
+                            ]) ?>
+                            <div style="position:relative; float:right; font-size:15px"># <?= $i+1 ?></div>
+                        </legend>
                         <div class="form-group">
                             <div class="col-lg-2">
                                 <b><em><span class="text-danger"><?= number_format($product['priceByr'], 0, '.', ' ') ?></span></em></b>&nbsp; BYR <br>
@@ -21,31 +31,35 @@ if (isset($products)) { ?>
                             <div class="col-lg-1">
                                 <?php
                                 if ($product['available']) {
-                                    $ph->tag('span', 'Есть в наличии', [
-                                        'class' => 'text-success',
-                                        'style' => 'font-size: 0.7em; font-weight: bold'
+                                    $ph->system_link('Есть в наличии', '/product/edit/' . $catalog['id'] . '/' . $product['id'], [
+                                        'class' => 'text-success small-reference'
                                     ]);
                                 } else {
-                                    $ph->tag('span', 'Нет в наличии', [
-                                        'class' => 'text-danger',
-                                        'style' => 'font-size: 0.7em; font-weight: bold'
+                                    $ph->system_link('Нет в наличии', '/product/edit/' . $catalog['id'] . '/' . $product['id'], [
+                                        'class' => 'text-danger small-reference'
                                     ]);
                                 }
                                 ?>
                             </div>
                             <div class="col-lg-1">
                                 <span style="font-size: 0.8em;">приор. </span>
-                                <b><em><span class="text-success"><?= $product['priority'] ?></span></em></b>
+                                <b><em>
+                                <?php $ph->system_link($product['priority'], '/product/edit/' . $catalog['id'] . '/' . $product['id'], [
+                                        'class' => 'text-success small-reference',
+                                        'style' => 'font-size: 1em'
+                                    ]); ?>
+                                    </em></b>
                             </div>
                             <div class="col-lg-1">
                                 <?php
                                     if (isset($product['imagePath'])) {
-                                        $ph->tag('img', null, ['src' => $ph->path($product['imagePath']), 'class' => 'image-preview', 'style' => 'max-width:100%; max-height:70px']);
+                                        $ph->tag_open('a', ['href' => $ph->system_url('/product/uploadImage/' . $catalog['id'] . '/' . $product['id'])])
+                                            ->tag('img', null, ['src' => $ph->path($product['imagePath']), 'class' => 'image-preview', 'style' => 'max-width:100%; max-height:70px'])
+                                            ->tag_close('a');
+
                                     } else {
-                                        $ph->tag('span', 'Изображение отсутствует', [
-                                            'class' => 'text-danger',
-                                            'style' => 'font-size: 0.7em; font-weight: bold; cursor: pointer',
-                                            'onclick' => 'window.location.href = "' . $ph->system_url('/product/uploadImage/' . $catalog['id'] . '/' . $product['id']) . '"'
+                                        $ph->system_link('Изображение отсутствует', '/product/uploadImage/' . $catalog['id'] . '/' . $product['id'], [
+                                            'class' => 'text-danger small-reference'
                                         ]);
                                     }
                                 ?>
@@ -53,14 +67,12 @@ if (isset($products)) { ?>
                             <div class="col-lg-1">
                                 <?php
                                     if (!empty($product['description'])) {
-                                        $ph->tag('span', 'Есть описание', [
-                                            'class' => 'text-success',
-                                            'style' => 'font-size: 0.7em; font-weight: bold'
+                                        $ph->system_link('Есть описание', '/product/edit/' . $catalog['id'] . '/' . $product['id'], [
+                                            'class' => 'text-success small-reference'
                                         ]);
                                     } else {
-                                        $ph->tag('span', 'Описание отсутствует', [
-                                            'class' => 'text-danger',
-                                            'style' => 'font-size: 0.7em; font-weight: bold'
+                                        $ph->system_link('Описание отсутствует', '/product/edit/' . $catalog['id'] . '/' . $product['id'], [
+                                            'class' => 'text-danger small-reference'
                                         ]);
                                     }
                                 ?>
