@@ -45,10 +45,30 @@ function renderCatalog($root) {
 
 function renderActionIcon($root, $iconClassPostfix, $action) {
     global $ph;
+
+    switch ($action) {
+        case 'addSubcatalog':
+            $tip = 'Добавить подкаталог';
+            break;
+        case 'editProducts':
+            $tip = 'Просмотреть товары';
+            break;
+        case 'edit':
+            $tip = 'Редактировать';
+            break;
+        case 'delete':
+            $tip = 'Удалить';
+            break;
+        default:
+            $tip = $action;
+    }
+
     $ph->tag('span', null, [
         'class' => 'action glyphicon glyphicon-' . $iconClassPostfix,
         'data-action' => $action,
-        'data-catalog-id' => $root['id']
+        'data-catalog-id' => $root['id'],
+        'data-toggle' => 'tooltip',
+        'title' => $tip
     ]);
 }
 ?>
@@ -65,6 +85,10 @@ function renderActionIcon($root, $iconClassPostfix, $action) {
     var catalogTree = new CatalogTree({
         holderElem: $("#catalog-tree"),
         baseCatalogPath: "<?= $ph->system_url('catalog') . '/' ?>"
+    });
+
+    $(function () {     // activate bootstrap tooltips
+        $("[data-toggle='tooltip']").tooltip();
     });
 </script>
 
