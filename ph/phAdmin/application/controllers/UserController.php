@@ -49,6 +49,7 @@ class UserController extends BaseController {
                 $user = UserModel::getInstance()->getById($userId);
             }
             $this->setViewVariable('user', $user);
+            $this->setViewVariable('currentUser', AuthModel::getInstance()->getLoggedInUser());
             $this->render();
         } catch (PhException $e) {
             messages::add('User_IdNotFound', 1, 'error');
@@ -100,7 +101,7 @@ class UserController extends BaseController {
     public function delete($userId) {
         try {
             if ($userId === AuthModel::getInstance()->getLoggedInUserId()) {
-                throw new PhException('Can not delete current user', ['User_DeleteCurrentUser' => 1]);
+                PhException::throwErrors(['User_DeleteCurrentUser' => 1]);
             }
             $user = UserModel::getInstance()->getById($userId);
             $this->setViewVariable('user', $user);
@@ -117,7 +118,7 @@ class UserController extends BaseController {
 
         try {
             if ($userId === AuthModel::getInstance()->getLoggedInUserId()) {
-                throw new PhException('Can not delete current user', ['User_DeleteCurrentUser' => 1]);
+                PhException::throwErrors(['User_DeleteCurrentUser' => 1]);
             }
             $user = UserModel::getInstance()->getById($userId);
             UserModel::getInstance()->delete($userId);

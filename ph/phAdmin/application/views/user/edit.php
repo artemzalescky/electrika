@@ -22,7 +22,7 @@ $ph->tag('hr')->renderAllMessages(); ?>
                     <input type="text" value="<?= $user['login'] ?>" name="user[login]" placeholder="<?= $ph->lang->Ph_User_Login ?>" id="inputLogin" class="form-control" autocomplete="off">
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" <?php if ($currentUser['id'] == $user['id']) echo 'style="display:none"' ?> >
                 <label class="col-lg-2 control-label"><?= $ph->lang->Ph_User_Role ?></label>
                 <div class="col-lg-10">
                     <div class="radio">
