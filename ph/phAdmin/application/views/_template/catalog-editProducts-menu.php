@@ -24,7 +24,7 @@
                 </p>
             </div>
             <div class="modal-footer">
-                <?php $ph->system_link('Пересчитать', '/product/convertAllPrices/' . $catalog['id'],[
+                <?php $ph->system_link('Пересчитать', '/product/convertCatalogPrices/' . $catalog['id'],[
                         'class' => 'btn btn-danger'
                     ]) ?>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>

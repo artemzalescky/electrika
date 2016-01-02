@@ -71,7 +71,8 @@ class Dictionary {
             "Ph_Message_Product_ImageUploadError" => "Ошибка при загрузке изображения",
             "Ph_Message_Product_ImageSaved" => "Изображение товара сохранено",
             "Ph_Message_Product_PriceConverted" => "Цена товара '#{name}' пересчитана с учетом курса доллара сайта",
-            "Ph_Message_Product_AllPricesConverted" => "Цены всех товаров каталога '#{name}' пересчитаны с учетом курса доллара сайта",
+            "Ph_Message_Product_CatalogPricesConverted" => "Цены всех товаров каталога '#{name}' пересчитаны с учетом курса доллара сайта",
+            "Ph_Message_Product_AllPricesConverted" => "Цены всех товаров сайта пересчитаны с учетом курса доллара сайта",
 
             "Ph_Message_Currency_Saved" => "Курсы валют сохранены",
 

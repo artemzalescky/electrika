@@ -130,18 +130,35 @@ class ProductController extends BaseController {
         }
     }
 
-    public function convertAllPrices($catalogId) {
+    public function convertCatalogPrices($catalogId) {
         try {
             CatalogModel::getInstance()->checkCatalogExist($catalogId);
 
             $catalog = CatalogModel::getInstance()->getById($catalogId);
             ProductModel::getInstance()->updatePriceByrForAll($catalogId);
 
-            messages::add('Product_AllPricesConverted', ['name' => $catalog['name']], 'success');
+            messages::add('Product_CatalogPricesConverted', ['name' => $catalog['name']], 'success');
             $this->redirectBack();
         } catch (PhException $e) {
             messages::addGroup('error', $e->getErrors());
             $this->systemRedirect('/catalog/editProducts/' . $catalogId);
+        }
+    }
+
+    public function convertAllPrices() {
+        if (!$this->isPostRequest()) exit;
+
+        try {
+            $catalogs = CatalogModel::getInstance()->get();
+            foreach ($catalogs as $catalog) {
+                ProductModel::getInstance()->updatePriceByrForAll($catalog['id']);
+            }
+
+            messages::add('Product_AllPricesConverted', 1, 'success');
+            $this->redirectBack();
+        } catch (PhException $e) {
+            messages::addGroup('error', $e->getErrors());
+            $this->systemRedirect('/catalog');
         }
     }
 
