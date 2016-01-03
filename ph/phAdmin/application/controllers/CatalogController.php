@@ -17,6 +17,10 @@ class CatalogController extends BaseController {
         $this->render();
     }
 
+    public function get() {
+        $this->renderJson(CatalogModel::getInstance()->get(), 'UTF-8');
+    }
+
     public function addSubcatalog($parentCatalogId) {
         if (intval($parentCatalogId) !== 0) {
             $parentCatalog = CatalogModel::getInstance()->getById($parentCatalogId);

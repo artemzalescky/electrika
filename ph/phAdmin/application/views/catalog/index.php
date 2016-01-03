@@ -75,7 +75,24 @@ function renderActionIcon($root, $iconClassPostfix, $action) {
 
 <h3> Редактирование продукции </h3>
 
-<?php $ph->tag('hr')->renderAllMessages(); ?>
+<hr>
+
+<ul class="nav nav-pills">
+    <li>
+        <a href="#" role="button" data-toggle="modal" data-target="#priceConversionConfirm">Пересчитать цены</a>
+    </li>
+</ul>
+
+<div id="price-conversion-progress-container" class="well well-lg" style="display: none; margin-top: 10px">
+    Пересчет цен для каталога <span id="current-catalog-name"></span>
+    <div class="progress progress-striped active">
+        <div id="conversion-progress" class="progress-bar progress-bar-info" style="width:0"></div>
+    </div>
+</div>
+
+<hr>
+
+<?php $ph->renderAllMessages(); ?>
 
 <div id="catalog-tree">
     <?php renderCatalog($catalogTree) ?>
@@ -93,3 +110,61 @@ function renderActionIcon($root, $iconClassPostfix, $action) {
 </script>
 
 <hr>
+
+<!-- modal confirm on price conversion -->
+<div class="modal" id="priceConversionConfirm">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Внимание!</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Вы уверены, что хотите пересчитать цены всей продукции сайта ? <br>
+                    Старые цены в BYR будут пересчитаны с учетом <?php $ph->system_link('курса валюты', 'currency') ?> на сайте
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="convertAllPrices()">Пересчитать</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('document').ready(function(){
+        $('#priceConversionConfirm').modal({
+            show: false
+        });
+    });
+
+    function convertAllPrices() {
+        $('#price-conversion-progress-container').css('display', 'block');
+
+        $.get("<?= $ph->system_url('/catalog/get') ?>", function(catalogs) {
+            if (catalogs.length == 0) {
+                return;
+            }
+
+            convertCatalogPrices({'i': 0});
+
+            function convertCatalogPrices(input) {
+                var i = input['i'];
+                $('#current-catalog-name').html(catalogs[i]['name']);
+
+                $.get("<?= $ph->system_url('/product/convertCatalogPrices') ?>/" + catalogs[i]['id'], function(responce) {
+                    $('#conversion-progress').css('width', (i + 1) / catalogs.length * 100 + '%');
+                    input['i'] = input['i'] + 1;
+                    if (input['i'] < catalogs.length) {
+                        convertCatalogPrices(input);
+                    } else {
+                        alert('Цены всей продукции пересчитаны\nНажмите Ок для применения изменений');
+                        location.reload();
+                    }
+                });
+            }
+        });
+    }
+</script>
