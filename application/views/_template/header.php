@@ -27,7 +27,7 @@
                 <li>
                     <?php $ph->link('Новости', '/news') ?>
                 </li>
-                <li><a class="btn" href="#">SIGN IN / SIGN UP</a></li>
+
             </ul>
         </div>
     </div>
