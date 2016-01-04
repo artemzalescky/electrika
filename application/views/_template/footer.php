@@ -73,7 +73,7 @@
                         <span class="glyphicon glyphicon-home"></span>
                         <span class="field">Адрес:</span>
                         <br>
-                        <?php $ph->link('г.Минск ул. Малинина 35а <br> павильон 2/7-50', '/contacts') ?>
+                        <?php $ph->link('г.Минск ул. Малинина 35а <br> рынок “Свелта” павильон 2/7-50', '/contacts') ?>
                     </li>
                 </ul>
             </div>
