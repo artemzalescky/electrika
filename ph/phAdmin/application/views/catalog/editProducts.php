@@ -83,9 +83,6 @@ if (isset($products)) { ?>
                                     <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <?php $ph->system_link('Общая информация', '/product/edit/' . $catalog['id'] . '/' . $product['id']) ?>
-                                        </li>
-                                        <li>
                                             <?php $ph->system_link('Изображение', '/product/uploadImage/' . $catalog['id'] . '/' . $product['id']) ?>
                                         </li>
                                         <li>
@@ -99,6 +96,13 @@ if (isset($products)) { ?>
                                 <?php
                                 $ph->space()
                                     ->system_link('Удалить', '/product/delete/' . $catalog['id'] . '/' . $product['id'], ['class' => 'btn btn-danger'])
+                                    ->space()
+                                    ->tag('button', '<span class="glyphicon glyphicon-star"></span>', [
+                                        'class' => 'btn btn-info',
+                                        'data-toggle' => 'tooltip',
+                                        'title' => 'Добавить товар в спецпредложения',
+                                        'onclick' => "addToSpecialOffers({$catalog['id']}, {$product['id']}); return false;"
+                                    ])
                                 ?>
                             </div>
                         </div>
@@ -131,3 +135,100 @@ if (isset($products)) { ?>
 } ?>
 
 <hr>
+
+<script>
+    $(function () {     // activate bootstrap tooltips
+        $("[data-toggle='tooltip']").tooltip();
+    });
+
+    $('document').ready(function(){
+        $('#specialOfferSuccessModal').modal({
+            show: false
+        });
+    });
+
+    function addToSpecialOffers(catalogId, productId) {
+        $.ajax("<?= $ph->system_url('/specialOffer/create') ?>/" + catalogId + "/" + productId, {
+            method: 'POST',
+            success: function(data, textStatus, jqXHR) {
+                $('#specialOfferSuccessModal').modal({
+                    show: true
+                });
+                console.log(jqXHR);
+            },
+            error: function(jqXHR) {
+                if (jqXHR.status == 406) {
+                    $('#specialOfferDuplicateErrorModal').modal({
+                        show: true
+                    });
+                } else {
+                    $('#specialOfferErrorModal').modal({
+                        show: true
+                    });
+                }
+            }
+        })
+    }
+</script>
+
+<!-- modal confirm on adding to special offers -->
+<div class="modal" id="specialOfferSuccessModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title text-primary">Товар добавлен в специальные предложения</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Список товаров на акции обновлен <br>
+                    Для просмотра всех специальных предложений перейдите по <?php $ph->system_link('ссылке', '/specialOffer') ?>.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Ок</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="specialOfferDuplicateErrorModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title text-danger">Ошибка</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Данный товар уже находится в специальных предложениях. <br>
+                    Нельзя добавлять один и тот же товар несколько раз. <br>
+                    Для просмотра всех специальных предложений перейдите по <?php $ph->system_link('ссылке', '/specialOffer') ?>.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Ок</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="specialOfferErrorModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title text-danger">Ошибка</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Неизвестная ошибка. <br>
+                    Проверьте подсоединение к сети. <br>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Ок</button>
+            </div>
+        </div>
+    </div>
+</div>

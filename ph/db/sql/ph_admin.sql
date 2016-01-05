@@ -94,6 +94,16 @@ INSERT INTO `ph_user` (`id`, `login`, `password`, `name`, `role`) VALUES
 (1, 'admin', '57a0dcf0dcbd9050f8bc9919f11f111e', 'admin', 2);
 
 --
+-- Структура таблицы `special_offer`
+--
+
+CREATE TABLE IF NOT EXISTS `special_offer` (
+  `catalog_id` int(6) NOT NULL,
+  `product_id` int(6) NOT NULL,
+  `description` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
 -- Indexes for dumped tables
 --
 
@@ -114,6 +124,12 @@ ALTER TABLE `ph_exchange_rates`
 --
 ALTER TABLE `ph_user`
  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `special_offer`
+--
+ALTER TABLE `special_offer`
+ ADD PRIMARY KEY (`catalog_id`,`product_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables

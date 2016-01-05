@@ -51,7 +51,7 @@ function renderActionIcon($root, $iconClassPostfix, $action) {
             $tip = 'Добавить подкаталог';
             break;
         case 'editProducts':
-            $tip = 'Просмотреть товары';
+            $tip = 'Редактировать товары';
             break;
         case 'edit':
             $tip = 'Редактировать';
@@ -78,6 +78,9 @@ function renderActionIcon($root, $iconClassPostfix, $action) {
 <hr>
 
 <ul class="nav nav-pills">
+    <li class="active">
+        <?php $ph->system_link('Специальные предложения', '/specialOffer') ?>
+    </li>
     <li>
         <a href="#" role="button" data-toggle="modal" data-target="#priceConversionConfirm">Пересчитать цены</a>
     </li>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Дек 31 2015 г., 14:24
+-- Время создания: Янв 05 2016 г., 10:42
 -- Версия сервера: 5.6.20
 -- Версия PHP: 5.5.15
 
@@ -2061,6 +2061,18 @@ INSERT INTO `product_72` (`id`, `name`, `description`, `priority`, `available`, 
 (20, 'Рамка на 4 поста ABB Basic 55', 'Рамка на 4 поста ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 4.97, 91200),
 (21, 'Рамка на 5 постов ABB Basic 55', 'Рамка на 5 постов ABB Basic 55\r\nПроизводитель : ABB\r\nСерия : Basic 55\r\nДоступные цвета : белый и слоновая кость', 0, 1, 'шт.', 8.23, 151000);
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `special_offer`
+--
+
+CREATE TABLE IF NOT EXISTS `special_offer` (
+  `catalog_id` int(6) NOT NULL,
+  `product_id` int(6) NOT NULL,
+  `description` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Indexes for dumped tables
 --
@@ -2424,6 +2436,12 @@ ALTER TABLE `product_71`
 --
 ALTER TABLE `product_72`
  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `special_offer`
+--
+ALTER TABLE `special_offer`
+ ADD PRIMARY KEY (`catalog_id`,`product_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables

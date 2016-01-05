@@ -311,6 +311,12 @@ class HtmlHelper {
         return $this;
     }
 
+    public function system_image($src, $options = null) {
+        $options = $this->merge_options(['src' => $this->system_image_path($src)], $options);
+        $this->single_tag('img', $options);
+        return $this;
+    }
+
     public function system_stylesheet_path($src) {
         return $this->system_resource_path(self::STYLESHEETS_FOLDER . '/' . $this->trimSlashes($src));
     }

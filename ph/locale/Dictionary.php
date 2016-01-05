@@ -20,6 +20,7 @@ class Dictionary {
 
             "Ph_Message_Welcome" => "Добро пожаловать в панель администрирования",
             "Ph_Message_Error" => "Ошибка",
+            "Ph_Message_UnknownError" => "Неизвестная ошибка сервера",
 
             "Ph_Message_User_IdNotFound" => "Пользователь с таким ID не найден",
             "Ph_Message_User_Added" => "Пользователь '#{login}' успешно добавлен",
@@ -75,6 +76,8 @@ class Dictionary {
             "Ph_Message_Product_AllPricesConverted" => "Цены всех товаров сайта пересчитаны с учетом курса доллара сайта",
 
             "Ph_Message_Currency_Saved" => "Курсы валют сохранены",
+
+            "Ph_Message_SpecialOffer_Deleted" => "Специальное предложение удалено",
 
             "Ph_User_Name" => "Имя",
             "Ph_User_Login" => "Логин",

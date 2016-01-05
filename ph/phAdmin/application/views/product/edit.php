@@ -62,7 +62,7 @@ $ph->renderAllMessages(); ?>
                 <div class="col-lg-10 col-lg-offset-2">
                     <?php $ph->input_submit(['value' => $ph->lang->Ph_Button_Save, 'class' => 'btn btn-primary'])
                         ->space()
-                        ->system_link('Отмена', '/catalog/editProducts/' . $catalog['id'], ['class' => 'btn btn-default']);
+                        ->link_back('Отмена', ['class' => 'btn btn-default']);
                     ?>
                 </div>
             </div>

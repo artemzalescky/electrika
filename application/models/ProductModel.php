@@ -38,7 +38,9 @@ class ProductModel {
 
     public function getById($catalogId, $productId) {
         try {
-            return $this->productDAO->getById($catalogId, $productId);
+            $product = $this->productDAO->getById($catalogId, $productId);
+            $product['catalogId'] = $catalogId;
+            return $product;
         } catch (\Exception $e) {
             return null;
         }
