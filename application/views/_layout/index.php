@@ -24,6 +24,10 @@
         /*index*/
         ->include_css('catalog.css')
         ->include_css('logo.css')
+
+        /*Special Offers*/
+        ->include_css('special-offer-carousel.css')
+        ->include_css('product-list.css')
     ?>
 </head>
 
@@ -74,7 +78,7 @@
                         <?php $ph->link('Подробнее', '/catalog/kabel-i-provod', ['class' => 'btn btn-lg btn-primary', 'role' => 'button']) ?>
                     </p>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
     <a class="left carousel-control" href="http://bootstrap-3.ru/examples/carousel/#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -84,6 +88,66 @@
 <?php $this->renderTemplate('children-catalog') ?>
 
 <br>
+
+<!--=========================== Special Offers ================================================== -->
+<?php if (!empty($specialOfferProducts)) { ?>
+<section>
+    <br>
+    <div class="container">
+        <div class="recommended_items"><!--recommended_items-->
+            <h2 id="sale-title" class="title text-center"> Специальные предложения </h2>
+
+            <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <?php
+                    for ($i = 0; $i < count($specialOfferProducts); $i++) {
+                        $groupClass = ($i == 0) ? 'item active' : 'item';
+                        $ph->tag_open('div', ['class' => $groupClass]);
+                        foreach ($specialOfferProducts[$i] as $product) { ?>
+                            <div class="col-sm-3">
+                                <div class="product-container text-center">
+                                    <?php $ph->tag_open('a', ['href' => $ph->url($product['fullUrl']), 'class' => 'image-container'])
+                                        ->tag('img', null, [
+                                            'src' => \application\models\ProductModel::getInstance()->imageExist($product['catalogId'], $product['id'])
+                                                ? $ph->image_path("/product/{$product['catalogId']}/{$product['id']}.jpeg")
+                                                : $ph->image_path('no-photo.jpg'),
+                                            'class' => 'image'
+                                        ])
+                                        ->tag_close('a')
+                                        ->link($product['name'], $product['fullUrl'], ['class' => 'name'])
+                                    ?>
+                                    <div class="price">
+                                        <?php
+                                        if ($product['available']) {
+                                            if (!empty($product['priceByr'])) {
+                                                $ph->text(number_format($product['priceByr'], 0, '.', ' ') . ' ')
+                                                    ->tag('span', 'руб.', ['class' => 'price-currency']);
+                                            } else {
+                                                $ph->tag('span', 'Цену уточняйте', ['class' => 'price-currency']);
+                                            }
+                                        } else {
+                                            $ph->tag('span', 'Нет в наличии', ['class' => 'not-available']);
+                                        }
+                                        ?>
+                                    </div>
+                                    <?php $ph->link('<i class="glyphicon glyphicon-plus"></i>Подробнее', $product['fullUrl'], ['class'=> 'btn btn-default read-more']);?>
+                                </div>
+                            </div>
+                  <?php }
+                        $ph->tag_close('div');
+                    } ?>
+                </div>
+                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                    <i class="glyphicon glyphicon-chevron-left"></i>
+                </a>
+                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                    <i class="fa glyphicon glyphicon-chevron-right"></i>
+                </a>
+            </div>
+        </div><!--/recommended_items-->
+    </div>
+</section>
+<?php } ?>
 
 <div class="container">
     <hr>
