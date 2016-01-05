@@ -43,7 +43,7 @@
         <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="2" class=""></li>
     </ol>
-    <div class="carousel-inner">
+    <div class="carousel-inner" style="height: 500px !important;">
         <div class="item">
             <?php $ph->image('Carousel/1.jpg', ['data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Резетки' ]) ?>
             <div class="container">
