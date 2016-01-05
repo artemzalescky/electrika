@@ -16,7 +16,7 @@
     <div class="col-lg-4" style="margin-top: 20px">
         <?php  $ph->image('product/'.$currentCatalog['id'].'/'.$product['id'].'.jpeg', [
             'class' => 'image',
-            'style' => 'height:100%; width: 100%',
+            'style' => 'max-width: 100%',
             'data-src' => 'holder.js/140x140'
         ]);
         ?>
@@ -24,8 +24,16 @@
     <div class="col-lg-8">
         <h3><?php echo $product['name']?></h3>
         <?php echo $product['description']; ?>
-        <br><br/>
-        <h3>Приобрести данный товар можно по телефону:</h3>
+        <br><br>
+        <?php if ($product['available']) {
+            echo '<h5><span class="glyphicon glyphicon-ok text-success"></span> &nbsp;Есть в наличии</h5>';
+        } else {
+            echo '<h5><span class="glyphicon glyphicon-remove text-danger"></span> Нет в наличии</h5>';
+        } ?>
+        <br>
+        <h4>Цена : <span class="text-info" style="font-weight: bold; font-size:20px"> <?= number_format($product['priceByr'], 0, '.', ' ') ?> </span> руб. </h4>
+        <br>
+        <h4>Приобрести данный товар можно по телефонам:</h4>
         мтс <?php $ph->link('8 029 850 40 85', '/contacts')?>
         <?php $ph->single_tag('br') ?>
         Velcom <?php $ph->link('8 044 461 09 06', '/contacts') ?>
