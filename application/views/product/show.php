@@ -15,7 +15,8 @@
 
     <div class="col-lg-4" style="margin-top: 20px">
         <?php  $ph->image('product/'.$currentCatalog['id'].'/'.$product['id'].'.jpeg', [
-            'class' => 'img-circle image',
+            'class' => 'image',
+            'style' => 'height:100%; width: 100%',
             'data-src' => 'holder.js/140x140'
         ]);
         ?>
