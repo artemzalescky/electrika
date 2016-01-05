@@ -31,4 +31,9 @@ class ProductController extends BaseController {
         $this->setViewVariable('product', $product);
         $this->render();
     }
+
+    public function getById($catalogId, $productId) {
+        $catalog = CatalogModel::getInstance()->getById($catalogId);
+        $this->redirect('/product/' . $catalog['url'] . '/' . $productId);
+    }
 }

@@ -106,7 +106,10 @@
                         foreach ($specialOfferProducts[$i] as $product) { ?>
                             <div class="col-sm-3">
                                 <div class="product-container text-center">
-                                    <?php $ph->tag_open('a', ['href' => $ph->url($product['fullUrl']), 'class' => 'image-container'])
+                                    <?php $ph->tag_open('a', [
+                                            'href' => $ph->url("/product/id/{$product['catalogId']}/{$product['id']}"),
+                                            'class' => 'image-container'
+                                        ])
                                         ->tag('img', null, [
                                             'src' => \application\models\ProductModel::getInstance()->imageExist($product['catalogId'], $product['id'])
                                                 ? $ph->image_path("/product/{$product['catalogId']}/{$product['id']}.jpeg")
@@ -114,7 +117,7 @@
                                             'class' => 'image'
                                         ])
                                         ->tag_close('a')
-                                        ->link($product['name'], $product['fullUrl'], ['class' => 'name'])
+                                        ->link($product['name'], "/product/id/{$product['catalogId']}/{$product['id']}", ['class' => 'name'])
                                     ?>
                                     <div class="price">
                                         <?php
@@ -130,7 +133,8 @@
                                         }
                                         ?>
                                     </div>
-                                    <?php $ph->link('<i class="glyphicon glyphicon-plus"></i>Подробнее', $product['fullUrl'], ['class'=> 'btn btn-default read-more']);?>
+                                    <?php $ph->link('<i class="glyphicon glyphicon-plus"></i>Подробнее',
+                                        "/product/id/{$product['catalogId']}/{$product['id']}", ['class'=> 'btn btn-default read-more']);?>
                                 </div>
                             </div>
                   <?php }

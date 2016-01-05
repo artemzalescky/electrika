@@ -20,6 +20,13 @@ class Routes extends Filter {
             return new RouteData($controllerName, $actionName, $pathParams);
         }
 
+        if (count($tokenArr) == 4 && $tokenArr[0] == 'product' && $tokenArr[1] == 'id') {
+            $controllerName = 'product';
+            $actionName = 'getById';
+            $pathParams = $this->fillPathParamArr($tokenArr, 2);
+            return new RouteData($controllerName, $actionName, $pathParams);
+        }
+
         if (count($tokenArr) > 0 && $tokenArr[0] == 'product') {
             $controllerName = 'product';
             $actionName = 'show';
