@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `ph_user` (
 --
 
 INSERT INTO `ph_user` (`id`, `login`, `password`, `name`, `role`) VALUES
-(1, 'admin', '57a0dcf0dcbd9050f8bc9919f11f111e', 'admin', 2);
+(1, 'a220mins', '55c75b5c545690be8d03f8e7fe4900e7', 'Администратор', 2);
 
 -- --------------------------------------------------------
 
