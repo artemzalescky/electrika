@@ -45,7 +45,7 @@
     </ol>
     <div class="carousel-inner" style="height: 500px !important;">
         <div class="item">
-            <?php $ph->image('Carousel/1.jpg', ['data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Резетки' ]) ?>
+            <?php $ph->image('/carousel/1.jpg', ['data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Резетки' ]) ?>
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Розетки и выключатели</h1>
@@ -57,7 +57,7 @@
             </div>
         </div>
         <div class="item active">
-            <?php $ph->image('Carousel/2.jpg', ['data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Лампочкм' ]) ?>
+            <?php $ph->image('/carousel/2.jpg', ['data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Лампочкм' ]) ?>
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Светотехника</h1>
@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="item">
-            <?php $ph->image('Carousel/3.jpg', ['data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Кабель и провода' ]) ?>
+            <?php $ph->image('/carousel/3.jpg', ['data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Кабель и провода' ]) ?>
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Кабель и провод</h1>
