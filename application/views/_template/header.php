@@ -27,24 +27,7 @@
                 <li>
                     <?php $ph->link('Новости', '/news') ?>
                 </li>
-
             </ul>
         </div>
     </div>
 </div>
-
-<!-- динамическое подменю Каталога -->
-<!--                <li id="catalog-menu-item" class="dropdown">-->
-<!--                    --><?php
-//                        $ph->link('Каталог <b class="caret"></b>', 'catalog', ['class' => 'dropdown-toggle', 'data-toggle' => 'dropdown']);
-//                        if (!empty($mainCatalogs)) {
-//                            $ph->tag_open('ul', ['class' => 'dropdown-menu', 'id' => 'catalog-dropdown-menu']);
-//                            foreach ($mainCatalogs as $mainCatalog) {
-//                                $ph->tag_open('li');
-//                                $ph->link($mainCatalog['name'], '/catalog/' . $mainCatalog['url']);
-//                                $ph->tag_close('li');
-//                            }
-//                            $ph->tag_close('ul');
-//                        }
-//                    ?>
-<!--                </li>-->

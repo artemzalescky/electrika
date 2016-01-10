@@ -1,4 +1,4 @@
-<div id="divFooter" class="footerArea">
+<div id="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
@@ -26,16 +26,16 @@
                 <p>
                     <?php $ph->link('Мобильная версия сайта', '/news') ?>
                     <br>
-                    <span style="text-transform:none;">20.12.2015</span>
+                    <span>20.12.2015</span>
                 </p>
                 <p>
                     <?php $ph->link('Новый дизайн сайта', '/news') ?>
                     <br>
-                    <span style="text-transform:none;">05.12.2015</span>
+                    <span>05.12.2015</span>
                 </p>
                 <p>
                     <?php $ph->link('Снижение цен на кабели и провода', '/news') ?><br>
-                    <span style="text-transform:none;">03.11.2015</span>
+                    <span>03.11.2015</span>
                 </p>
                 <p>
                     <?php $ph->link('Все новости', '/news') ?>
@@ -83,7 +83,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <p class="copyright">
+                <p>
                     Copyright © 2015 &nbsp; 220minsk.by. &nbsp; All Rights Reserved.
                 </p>
             </div>

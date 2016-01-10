@@ -94,7 +94,7 @@
 <section>
     <br>
     <div class="container">
-        <div class="recommended_items"><!--recommended_items-->
+        <div class="recommended_items">
             <h2 id="sale-title" class="title text-center"> Специальные предложения </h2>
 
             <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
@@ -148,7 +148,7 @@
                     <i class="fa glyphicon glyphicon-chevron-right"></i>
                 </a>
             </div>
-        </div><!--/recommended_items-->
+        </div>
     </div>
 </section>
 <?php } ?>
