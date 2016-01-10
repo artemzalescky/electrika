@@ -265,9 +265,20 @@ class HtmlHelper {
         return trim($url, '/');
     }
 
-    public function currentUrlWithoutParams() {
-        $uri_parts = explode('?', $_SERVER['REQUEST_URI'], 2);
-        return 'http://' . $_SERVER['HTTP_HOST'] . $uri_parts[0];
+    public function current_url($withHost = true, $withParams = true) {
+        if ($withHost == false && $withParams == false) {
+            return explode('?', $_SERVER['REQUEST_URI'], 2)[0];
+        }
+
+        if ($withHost == false && $withParams == true) {
+            return $_SERVER['REQUEST_URI'];
+        }
+
+        if ($withHost == true && $withParams == false) {
+            return 'http://' . $_SERVER['HTTP_HOST'] . explode('?', $_SERVER['REQUEST_URI'], 2)[0];
+        }
+
+        return 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
     }
 
     // ------------- system ---------------

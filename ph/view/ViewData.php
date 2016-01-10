@@ -55,4 +55,8 @@ class ViewData {
     public function getViewPath() {
         return $this->viewPath;
     }
+
+    public function getRouteData() {
+        return $this->routeData;
+    }
 }
