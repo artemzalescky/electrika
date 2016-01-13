@@ -31,7 +31,20 @@
             echo '<h5><span class="glyphicon glyphicon-remove text-danger"></span> Нет в наличии</h5>';
         } ?>
         <br>
-        <h4>Цена : <span class="text-info" style="font-weight: bold; font-size:20px"> <?= number_format($product['priceByr'], 0, '.', ' ') ?> </span> руб. </h4>
+        <?php if (!empty($product['priceByr'])) {
+                $ph->tag_open('h4')
+                    ->text('Цена : ')
+                    ->tag('span', number_format($product['priceByr'], 0, '.', ' '), [
+                        'class' => 'text-info',
+                        'style' => 'font-weight: bold; font-size:20px'
+                    ])
+                    ->text(' руб.')
+                    ->tag_close('h4');
+                } else {
+                    $ph->tag_open('h4')
+                        ->link('Цену уточняйте', '/contacts')
+                        ->tag_close('h4');
+                } ?>
         <br>
         <h4>Приобрести данный товар можно по телефонам:</h4>
         мтс <?php $ph->link('8 029 850 40 85', '/contacts')?>
