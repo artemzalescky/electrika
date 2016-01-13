@@ -1,44 +1,21 @@
-
-/* Carousel base class */
-.carousel {
+#main-carousel {
     height: 500px;
     margin-bottom: 50px;
 }
-/* Since positioning the image, we need to help out the caption */
-.carousel-caption {
+
+#main-carousel .carousel-caption {
     z-index: 10;
 }
 
-/* Declare heights because of positioning of img element */
-.carousel .item {
+
+#main-carousel .item {
     height: 500px;
     background-color: #777;
 }
-.carousel-inner > .item > img {
+#main-carousel .carousel-inner > .item > img {
     position: absolute;
     top: 0;
     left: 0;
     min-width: 100%;
     height: 500px;
 }
-
-
-
-/* MARKETING CONTENT
--------------------------------------------------- */
-
-
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-    margin: 80px 0; /* Space out the Bootstrap <hr> more */
-}
-
-/* Thin out the marketing headings */
-.featurette-heading {
-    font-weight: 300;
-    line-height: 1;
-    letter-spacing: -1px;
-}
-

@@ -36,27 +36,29 @@
 <?php $this->renderTemplate('header') ?>
 
 <!--=========================== Carousel ================================================== -->
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="main-carousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
-        <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+        <li data-target="#main-carousel" data-slide-to="0" class=""></li>
+        <li data-target="#main-carousel" data-slide-to="1" class="active"></li>
+        <li data-target="#main-carousel" data-slide-to="2" class=""></li>
     </ol>
     <div class="carousel-inner" style="height: 500px !important;">
-        <div class="item">
-            <?php $ph->image('/carousel/1.jpg', ['data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Резетки' ]) ?>
+        <div class="item active">
+            <?php $ph->image('/carousel/1.jpg', [
+                'data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Кабель и провод'
+            ]) ?>
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Розетки и выключатели</h1>
-                    <p>Продажа розеток и выключателей всех моделей м производителей в Минске</p>
+                    <h1>Кабель и провод</h1>
+                    <p>Продажа кабеля и провода в любом количестве и любой длины в Минске</p>
                     <p>
-                        <?php $ph->link('Подробнее', '/catalog/rozetki-i-vykljuchateli', ['class' => 'btn btn-lg btn-primary', 'role' => 'button']) ?>
+                        <?php $ph->link('Подробнее', '/catalog/kabel-i-provod', ['class' => 'btn btn-lg btn-primary', 'role' => 'button']) ?>
                     </p>
                 </div>
             </div>
         </div>
-        <div class="item active">
+        <div class="item">
             <?php $ph->image('/carousel/2.jpg', ['data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Лампочкм' ]) ?>
             <div class="container">
                 <div class="carousel-caption">
@@ -69,20 +71,20 @@
             </div>
         </div>
         <div class="item">
-            <?php $ph->image('/carousel/3.jpg', ['data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Кабель и провода' ]) ?>
+            <?php $ph->image('/carousel/3.jpg', ['data-src' => 'holder.js/900x500/auto/#777:#7a7a7a/text: Резетки' ]) ?>
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Кабель и провод</h1>
-                    <p>Продажа кабеля и провода в любом количестве и любой длины в Минске</p>
+                    <h1>Розетки и выключатели</h1>
+                    <p>Продажа розеток и выключателей всех моделей м производителей в Минске</p>
                     <p>
-                        <?php $ph->link('Подробнее', '/catalog/kabel-i-provod', ['class' => 'btn btn-lg btn-primary', 'role' => 'button']) ?>
+                        <?php $ph->link('Подробнее', '/catalog/rozetki-i-vykljuchateli', ['class' => 'btn btn-lg btn-primary', 'role' => 'button']) ?>
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <a class="left carousel-control" href="http://bootstrap-3.ru/examples/carousel/#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-    <a class="right carousel-control" href="http://bootstrap-3.ru/examples/carousel/#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    <a class="left carousel-control" href="http://bootstrap-3.ru/examples/carousel/#main-carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="http://bootstrap-3.ru/examples/carousel/#main-carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 </div><!-- /.carousel -->
 
 <?php $this->renderTemplate('children-catalog') ?>
@@ -94,8 +96,8 @@
 <section>
     <br>
     <div class="container">
-        <div class="recommended_items">
-            <h2 id="sale-title" class="title text-center"> Специальные предложения </h2>
+        <div id="special-offers-container">
+            <h2 id="special-offers-title" class="title text-center"> Специальные предложения </h2>
 
             <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -141,10 +143,10 @@
                         $ph->tag_close('div');
                     } ?>
                 </div>
-                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                <a class="left control" href="#recommended-item-carousel" data-slide="prev">
                     <i class="glyphicon glyphicon-chevron-left"></i>
                 </a>
-                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                <a class="right control" href="#recommended-item-carousel" data-slide="next">
                     <i class="fa glyphicon glyphicon-chevron-right"></i>
                 </a>
             </div>
@@ -164,7 +166,7 @@
                 <?php $ph->image('brands/iek.jpg', ['style' => 'height="52px; width="140px'])?>
             </li>
             <li>
-                <?php $ph->image('brands/EATON.gif', ['style' => 'height="52px; width="140px'])?>
+                <?php $ph->image('brands/eaton.gif', ['style' => 'height="52px; width="140px'])?>
             </li>
             <li>
                 <?php $ph->image('brands/viko.jpg', ['style' => 'height="52px; width="140px'])?>
@@ -173,10 +175,10 @@
                 <?php $ph->image('brands/tdm.jpg', ['style' => 'height="52px; width="140px'])?>
             </li>
             <li>
-                <?php $ph->image('brands/ff.jpg', ['style' => 'height="52px; width="140px'])?>
+                <?php $ph->image('brands/priotherm.gif', ['style' => 'height="52px; width="140px'])?>
             </li>
             <li>
-                <?php $ph->image('brands/Nexans.png', ['style' => 'height="52px; width="140px'])?>
+                <?php $ph->image('brands/lezard.jpg', ['style' => 'height="52px; width="140px'])?>
             </li>
 
         </ul>
@@ -190,10 +192,10 @@
                 <?php $ph->image('brands/abb.png', ['style' => 'height="52px; width="140px'])?>
             </li>
             <li>
-                <?php $ph->image('brands/EKF.jpg', ['style' => 'height="52px; width="140px'])?>
+                <?php $ph->image('brands/ekf.jpg', ['style' => 'height="52px; width="140px'])?>
             </li>
             <li>
-                <?php $ph->image('brands/gunsan.jpg', ['style' => 'height="52px; width="140px'])?>
+                <?php $ph->image('brands/feron.jpg', ['style' => 'height="52px; width="140px'])?>
             </li>
             <li>
                 <?php $ph->image('brands/legrand.jpg', ['style' => 'height="52px; width="140px'])?>
@@ -202,7 +204,7 @@
                 <?php $ph->image('brands/avtoprovod.jpg', ['style' => 'height="52px; width="140px'])?>
             </li>
             <li>
-                <?php $ph->image('brands/universal.png', ['style' => 'height="52px; width="140px'])?>
+                <?php $ph->image('brands/kkz.gif', ['style' => 'height="52px; width="140px'])?>
             </li>
         </ul>
     </div>
