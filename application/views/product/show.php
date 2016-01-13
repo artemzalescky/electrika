@@ -1,4 +1,3 @@
-
 <ol class="breadcrumb">
     <?php foreach ($pathToCatalog as $part) {
         $ph->tag_open('li')
@@ -14,12 +13,20 @@
 <div class="container" style="min-height: 300px">
 
     <div class="col-lg-4" style="margin-top: 20px">
-        <?php  $ph->image('product/'.$currentCatalog['id'].'/'.$product['id'].'.jpeg', [
-            'class' => 'image',
-            'style' => 'max-width: 100%',
-            'data-src' => 'holder.js/140x140'
-        ]);
-        ?>
+        <?php
+        if ($product['_imageExist']) {
+            $ph->image('/product/'.$currentCatalog['id'].'/'.$product['id'].'.jpeg', [
+                'class' => 'image',
+                'style' => 'max-width: 100%',
+                'data-src' => 'holder.js/140x140'
+            ]);
+        } else {
+            $ph->image('no-photo.jpg', [
+                'class' => 'image',
+                'style' => 'max-width: 100%',
+                'data-src' => 'holder.js/140x140'
+            ]);
+        } ?>
     </div>
     <div class="col-lg-8">
         <h3><?php echo $product['name']?></h3>
@@ -47,10 +54,9 @@
                 } ?>
         <br>
         <h4>Приобрести данный товар можно по телефонам:</h4>
-        мтс <?php $ph->link('8 029 850 40 85', '/contacts')?>
-        <?php $ph->single_tag('br') ?>
-        Velcom <?php $ph->link('8 044 461 09 06', '/contacts') ?>
+        МТС : <?php $ph->link('8 029 850 40 85', '/contacts')?>
+        <br>
+        Velcom : <?php $ph->link('8 044 461 09 06', '/contacts') ?>
 
     </div>
 </div>
-

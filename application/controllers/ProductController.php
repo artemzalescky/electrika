@@ -21,6 +21,7 @@ class ProductController extends BaseController {
         $currentCatalog = $pathToCatalog[count($pathToCatalog) - 1];
 
         $product = ProductModel::getInstance()->getById($currentCatalog['id'], $productId);
+        $product['_imageExist'] = ProductModel::getInstance()->imageExist($product['catalogId'], $product['id']);
 
         if (empty($product)) {
             $this->redirect('404');
