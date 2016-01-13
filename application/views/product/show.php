@@ -45,8 +45,11 @@
                         'class' => 'text-info',
                         'style' => 'font-weight: bold; font-size:20px'
                     ])
-                    ->text(' руб.')
-                    ->tag_close('h4');
+                    ->text(' руб.');
+                    if (trim($product['measure'], '.') != 'шт') {
+                        $ph->text(' / ' . $product['measure']);
+                    }
+                    $ph->tag_close('h4');
                 } else {
                     $ph->tag_open('h4')
                         ->link('Цену уточняйте', '/contacts')
