@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `ph_exchange_rates` (
 --
 
 INSERT INTO `ph_exchange_rates` (`currency`, `name`, `value`) VALUES
-(0, 'BYR', 1),
+(1, 'BYR', 1),
 (2, 'USD', 20000),
 (3, 'RUB', 307);
 
