@@ -9,14 +9,14 @@ class Config {
     private static $properties = [
 
         //  ------------- path ----------------
-        'app.basePath' => '/shop-template/',
+        'app.basePath' => '/electrika/',
 
         //  ------------- db ----------------
         'db.use' => true,
         'db.host' => '127.0.0.1',
         'db.user' => 'root',
         'db.password' => '',
-        'db.name' => 'shopdb',
+        'db.name' => 'electrika',
 
         // ------------- session ----------------
         'session.use' => true,
