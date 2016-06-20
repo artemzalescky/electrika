@@ -1,5 +1,7 @@
 <?php
 
+use application\helpers\CurrencyHelper;
+
 $ph->include_system_css('edit-products.css');
 
 $this->renderTemplate('catalog-edit-menu');
@@ -25,7 +27,7 @@ if (isset($products)) { ?>
                         </legend>
                         <div class="form-group">
                             <div class="col-lg-2">
-                                <b><em><span class="text-danger"><?= number_format($product['priceByr'], 0, '.', ' ') ?></span></em></b>&nbsp; BYR <br>
+                                <b><em><span class="text-danger"><?= CurrencyHelper::price_byr($product['priceByr']) ?></span></em></b>&nbsp; BYR <br>
                                 <em><span class="text-primary"><?= $product['priceUsd'] ?></span></em> $
                             </div>
                             <div class="col-lg-1">

@@ -1,3 +1,5 @@
+<?php use application\helpers\CurrencyHelper; ?>
+
 <h3> Специальные предложения </h3>
 
 <hr>
@@ -19,7 +21,7 @@
         <tr>
             <td><?= $i + 1 ?></td>
             <td><?php $ph->system_link($product['name'], "/product/edit/{$product['catalogId']}/{$product['id']}") ?></td>
-            <td><?php $ph->text(number_format($product['priceByr'], 0, '.', ' ')) ?></td>
+            <td><?php $ph->text(CurrencyHelper::price_byr($product['priceByr'])) ?></td>
             <td>
                 <?php
                     $ph->system_link('Удалить', "/specialOffer/delete/{$product['catalogId']}/{$product['id']}", [

@@ -36,7 +36,7 @@ class CurrencyModel {
         return $value * $fromRate / $toRate;
     }
 
-    public function convertWithRounding($value, $rounding = -2, $from = null, $to = null) {
+    public function convertWithRounding($value, $rounding = 2, $from = null, $to = null) {
         $converted = $this->convert($value, $from, $to);
         return round($converted, $rounding);
     }

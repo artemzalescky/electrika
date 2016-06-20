@@ -68,18 +68,29 @@ h2.title:before{
     font-weight: bold;
 }
 
-.product-container .price {
+.product-container .price-container {
     padding: 5px 0 10px 0;
+}
+
+.product-container .price {
     color: #FE980F;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: bold;
 }
 
+.product-container .price:hover, .product-container .price-before-denomination span:hover {
+    border-bottom: 2px solid #444;
+}
+
 .product-container .price-currency {
     color: #454545;
     font-size: 18px;
-    font-weight: normal;
+}
+
+.product-container .price-before-denomination {
+    color: #747474;
+    font-size: 13px;
 }
 
 .product-container .not-available {

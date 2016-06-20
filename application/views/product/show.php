@@ -1,3 +1,5 @@
+<?php use application\helpers\CurrencyHelper; ?>
+
 <ol class="breadcrumb">
     <?php foreach ($pathToCatalog as $part) {
         $ph->tag_open('li')
@@ -39,16 +41,21 @@
         } ?>
         <br>
         <?php if (!empty($product['priceByr'])) {
+                $pricePerMeasure = trim($product['measure'], '.') != 'шт' ? " р. / ${product['measure']}" : ' р.';
                 $ph->tag_open('h4')
                     ->text('Цена : ')
-                    ->tag('span', number_format($product['priceByr'], 0, '.', ' '), [
+                    ->tag('span', CurrencyHelper::price_byr($product['priceByr']), [
                         'class' => 'text-info',
-                        'style' => 'font-weight: bold; font-size:20px'
+                        'style' => 'font-weight: bold; font-size:20px',
+                        'data-toggle' => 'tooltip',
+                        'title' => 'цена после деноминации',
                     ])
-                    ->text(' руб.');
-                    if (trim($product['measure'], '.') != 'шт') {
-                        $ph->text(' / ' . $product['measure']);
-                    }
+                    ->text($pricePerMeasure)
+                    ->tag('span', '&nbsp;&nbsp; (' . CurrencyHelper::price_byr_before_denomination($product['priceByr']) . $pricePerMeasure . ')', [
+                        'style' => 'font-size:13px; color: #747474;',
+                        'data-toggle' => 'tooltip',
+                        'title' => 'цена до деноминации',
+                    ]);
                     $ph->tag_close('h4');
                 } else {
                     $ph->tag_open('h4')
@@ -63,3 +70,9 @@
 
     </div>
 </div>
+
+<script>
+    $(function () {     // activate bootstrap tooltips
+        $("[data-toggle='tooltip']").tooltip();
+    });
+</script>
