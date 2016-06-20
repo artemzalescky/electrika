@@ -24,9 +24,7 @@ class SpecialOfferModel {
 
         $products = [];
         foreach ($specialOffers as $specialOffer) {
-            $product = ProductModel::getInstance()->getById($specialOffer['catalogId'], $specialOffer['productId']);
-            $product['specialOfferDescription'] = $specialOffer['description'];
-            $products[] = $product;
+            $products[] = $this->getProductById($specialOffer['catalogId'], $specialOffer['productId']);
         }
         return $products;
     }

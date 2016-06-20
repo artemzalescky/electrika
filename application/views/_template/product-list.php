@@ -2,35 +2,10 @@
 
 <div class="tab-content">
     <div class="tab-pane fade active in">
-        <?php foreach ($products as $product) { ?>
-        <div class="col-sm-3">
-            <div class="product-container text-center">
-                <?php $ph->tag_open('a', ['href' => $ph->url($product['fullUrl']), 'class' => 'image-container'])
-                    ->tag('img', null, [
-                        'src' => !empty($product['imagePath']) ? $ph->path($product['imagePath']) : $ph->image_path('no-photo.jpg'),
-                        'class' => 'image'
-                    ])
-                    ->tag_close('a')
-                    ->link($product['name'], $product['fullUrl'], ['class' => 'name'])
-                ?>
-                <div class="price">
-                    <?php
-                        if ($product['available']) {
-                            if (!empty($product['priceByr'])) {
-                                $ph->text(number_format($product['priceByr'], 0, '.', ' ') . ' ')
-                                    ->tag('span', 'руб.', ['class' => 'price-currency']);
-                            } else {
-                                $ph->tag('span', 'Цену уточняйте', ['class' => 'price-currency']);
-                            }
-                        } else {
-                            $ph->tag('span', 'Нет в наличии', ['class' => 'not-available']);
-                        }
-                    ?>
-                </div>
-                <?php $ph->link('<i class="glyphicon glyphicon-plus"></i>Подробнее', $product['fullUrl'], ['class'=> 'btn btn-default read-more']);?>
-            </div>
-        </div>
-       <?php } ?>
+        <?php foreach ($products as $product) {
+            $this->setViewVariable('_product', $product);
+            $this->renderTemplate('product-preview');
+        } ?>
     </div>
 </div>
 

@@ -105,41 +105,10 @@
                     for ($i = 0; $i < count($specialOfferProducts); $i++) {
                         $groupClass = ($i == 0) ? 'item active' : 'item';
                         $ph->tag_open('div', ['class' => $groupClass]);
-                        foreach ($specialOfferProducts[$i] as $product) { ?>
-                            <div class="col-sm-3">
-                                <div class="product-container text-center">
-                                    <?php $ph->tag_open('a', [
-                                            'href' => $ph->url("/product/id/{$product['catalogId']}/{$product['id']}"),
-                                            'class' => 'image-container'
-                                        ])
-                                        ->tag('img', null, [
-                                            'src' => \application\models\ProductModel::getInstance()->imageExist($product['catalogId'], $product['id'])
-                                                ? $ph->image_path("/product/{$product['catalogId']}/{$product['id']}.jpeg")
-                                                : $ph->image_path('no-photo.jpg'),
-                                            'class' => 'image'
-                                        ])
-                                        ->tag_close('a')
-                                        ->link($product['name'], "/product/id/{$product['catalogId']}/{$product['id']}", ['class' => 'name'])
-                                    ?>
-                                    <div class="price">
-                                        <?php
-                                        if ($product['available']) {
-                                            if (!empty($product['priceByr'])) {
-                                                $ph->text(number_format($product['priceByr'], 0, '.', ' ') . ' ')
-                                                    ->tag('span', 'руб.', ['class' => 'price-currency']);
-                                            } else {
-                                                $ph->tag('span', 'Цену уточняйте', ['class' => 'price-currency']);
-                                            }
-                                        } else {
-                                            $ph->tag('span', 'Нет в наличии', ['class' => 'not-available']);
-                                        }
-                                        ?>
-                                    </div>
-                                    <?php $ph->link('<i class="glyphicon glyphicon-plus"></i>Подробнее',
-                                        "/product/id/{$product['catalogId']}/{$product['id']}", ['class'=> 'btn btn-default read-more']);?>
-                                </div>
-                            </div>
-                  <?php }
+                        foreach ($specialOfferProducts[$i] as $product) {
+                            $this->setViewVariable('_product', $product);
+                            $this->renderTemplate('product-preview');
+                        }
                         $ph->tag_close('div');
                     } ?>
                 </div>

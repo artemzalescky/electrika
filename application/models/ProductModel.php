@@ -39,7 +39,7 @@ class ProductModel {
     public function getById($catalogId, $productId) {
         try {
             $product = $this->productDAO->getById($catalogId, $productId);
-            $product['catalogId'] = $catalogId;
+            $this->provideFullInfoAboutOne($product, $catalogId);
             return $product;
         } catch (\Exception $e) {
             return null;
@@ -214,6 +214,7 @@ class ProductModel {
 
     private function provideFullInfoAboutOne(&$product, $catalogId) {
         $product['catalogId'] = $catalogId;
+        $product['fullUrl'] = "/product/id/${catalogId}/${product['id']}";
         if ($this->imageExist($catalogId, $product['id'])) {
             $product['imagePath'] = $this->getImagePath($catalogId, $product['id']);
         }
