@@ -82,7 +82,7 @@ class ProductDAO extends DbAccessor {
                     ."available int(1) unsigned NOT NULL DEFAULT '1' ,"
                     ."measure varchar(10) NOT NULL DEFAULT 'шт.' ,"
                     ."price_usd float unsigned NOT NULL DEFAULT '0',"
-                    ."price_byr int(10) unsigned NOT NULL DEFAULT '0' ,"
+                    ."price_byr float unsigned NOT NULL DEFAULT '0' ,"
                     ."PRIMARY KEY (id)"
                .") ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;";
         return $this->execute($sql);
